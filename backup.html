@@ -1,0 +1,3150 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=yes">
+    <title>LIONS FAMILY · The elite The elite</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@300;400;600;700;800;900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <style>
+        :root {
+            --bg-base: #06060a;
+            --surface: #0d0d14;
+            --surface-elevated: #13131d;
+            --surface-panel: rgba(13, 13, 20, 0.85);
+            --primary: #e63946;
+            --primary-soft: #ff4d5a;
+            --primary-glow: rgba(230, 57, 70, 0.5);
+            --primary-subtle: rgba(230, 57, 70, 0.15);
+            --accent: #00d9ff;
+            --accent-glow: rgba(0, 217, 255, 0.4);
+            --text-primary: #f8f9fa;
+            --text-secondary: #b8b9c0;
+            --text-muted: #6b6d76;
+            --border-subtle: rgba(255, 255, 255, 0.06);
+            --border-medium: rgba(255, 255, 255, 0.1);
+            --gradient-primary: linear-gradient(135deg, #e63946 0%, #ff6b7a 100%);
+            --gradient-dark: linear-gradient(180deg, #06060a 0%, #0d0d18 50%, #06060a 100%);
+            --gradient-card: linear-gradient(145deg, rgba(20, 20, 30, 0.9) 0%, rgba(10, 10, 16, 0.95) 100%);
+            --shadow-sm: 0 2px 8px rgba(0, 0, 0, 0.3);
+            --shadow-md: 0 8px 32px rgba(0, 0, 0, 0.4);
+            --shadow-lg: 0 20px 60px rgba(0, 0, 0, 0.5);
+            --shadow-glow: 0 0 40px rgba(230, 57, 70, 0.3), 0 10px 40px rgba(0, 0, 0, 0.4);
+            --shadow-accent: 0 0 30px rgba(0, 217, 255, 0.25);
+            --radius-sm: 12px;
+            --radius-md: 20px;
+            --radius-lg: 28px;
+            --transition-fast: 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+            --transition-smooth: 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+            --transition-bounce: 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Cairo', sans-serif;
+            scrollbar-width: thin;
+            scrollbar-color: var(--primary) var(--bg-base);
+        }
+
+        ::-webkit-scrollbar { width: 6px; height: 6px; }
+        ::-webkit-scrollbar-track { background: var(--bg-base); }
+        ::-webkit-scrollbar-thumb { 
+            background: linear-gradient(180deg, var(--primary) 0%, var(--primary-soft) 100%); 
+            border-radius: 10px; 
+        }
+
+        html, body {
+            background-color: var(--bg-base);
+            color: var(--text-primary);
+            min-height: 100vh;
+            overflow-x: hidden;
+            width: 100%;
+            max-width: 100vw;
+            position: relative;
+            font-size: 16px;
+            line-height: 1.6;
+        }
+
+        body {
+            display: flex;
+        }
+
+        /* Premium Animated Background */
+        .animated-bg {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: -3;
+            background: var(--gradient-dark);
+            animation: gradientPulse 20s ease-in-out infinite;
+        }
+
+        @keyframes gradientPulse {
+            0%, 100% { opacity: 1; }
+            50% { opacity: 0.7; }
+        }
+
+        .ambient-orb {
+            position: fixed;
+            border-radius: 50%;
+            filter: blur(80px);
+            opacity: 0.4;
+            pointer-events: none;
+            z-index: -2;
+            animation: orbFloat 25s ease-in-out infinite;
+        }
+
+        .ambient-orb.orb-1 {
+            width: 600px;
+            height: 600px;
+            background: radial-gradient(circle, rgba(230, 57, 70, 0.3) 0%, transparent 70%);
+            top: -200px;
+            right: -200px;
+            animation-delay: 0s;
+        }
+
+        .ambient-orb.orb-2 {
+            width: 500px;
+            height: 500px;
+            background: radial-gradient(circle, rgba(0, 217, 255, 0.2) 0%, transparent 70%);
+            bottom: -150px;
+            left: -150px;
+            animation-delay: -10s;
+        }
+
+        .ambient-orb.orb-3 {
+            width: 400px;
+            height: 400px;
+            background: radial-gradient(circle, rgba(230, 57, 70, 0.2) 0%, transparent 70%);
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            animation-delay: -5s;
+        }
+
+        @keyframes orbFloat {
+            0%, 100% { transform: translate(0, 0) scale(1); }
+            25% { transform: translate(30px, -30px) scale(1.1); }
+            50% { transform: translate(-20px, 20px) scale(0.95); }
+            75% { transform: translate(20px, 30px) scale(1.05); }
+        }
+
+        .particles {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: -1;
+            pointer-events: none;
+        }
+
+        .particle {
+            position: absolute;
+            width: 2px;
+            height: 2px;
+            background: var(--primary);
+            border-radius: 50%;
+            opacity: 0;
+            animation: particleFloat 25s infinite;
+        }
+
+        @keyframes particleFloat {
+            0% {
+                transform: translateY(100vh) translateX(0);
+                opacity: 0;
+            }
+            10% { opacity: 0.6; }
+            90% { opacity: 0.6; }
+            100% {
+                transform: translateY(-100vh) translateX(100px);
+                opacity: 0;
+            }
+        }
+
+        /* ========== AUTHENTICATION OVERLAY ========== */
+        .auth-overlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(6, 6, 10, 0.95);
+            backdrop-filter: blur(20px);
+            -webkit-backdrop-filter: blur(20px);
+            z-index: 10000;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 2rem;
+            animation: fadeIn 0.5s ease;
+        }
+
+        .auth-overlay.hidden {
+            display: none;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+
+        .auth-container {
+            background: var(--gradient-card);
+            border: 1px solid var(--border-subtle);
+            border-radius: var(--radius-lg);
+            padding: 3rem;
+            width: 100%;
+            max-width: 480px;
+            position: relative;
+            box-shadow: var(--shadow-lg), var(--shadow-glow);
+            animation: slideUp 0.6s cubic-bezier(0.4, 0, 0.2, 1);
+            max-height: 90vh;
+            overflow-y: auto;
+        }
+
+        @keyframes slideUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .auth-container::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(135deg, rgba(230, 57, 70, 0.1) 0%, transparent 50%);
+            pointer-events: none;
+            border-radius: var(--radius-lg);
+        }
+
+        .auth-logo {
+            text-align: center;
+            margin-bottom: 2.5rem;
+            position: relative;
+            z-index: 1;
+        }
+
+        .auth-logo h2 {
+            font-size: 2rem;
+            font-weight: 900;
+            color: #fff;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            margin-bottom: 0.5rem;
+        }
+
+        .auth-logo h2 span {
+            background: var(--gradient-primary);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .auth-logo p {
+            color: var(--text-muted);
+            font-size: 0.9rem;
+            font-weight: 600;
+        }
+
+        .auth-form {
+            position: relative;
+            z-index: 1;
+        }
+
+        .form-group {
+            margin-bottom: 1.5rem;
+            position: relative;
+        }
+
+        .form-group label {
+            display: block;
+            color: var(--text-secondary);
+            font-size: 0.9rem;
+            font-weight: 700;
+            margin-bottom: 0.5rem;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        .form-group label i {
+            margin-left: 0.5rem;
+            color: var(--primary);
+            font-size: 0.85rem;
+        }
+
+        .form-group input,
+        .form-group select {
+            width: 100%;
+            padding: 1rem 1.25rem;
+            background: rgba(20, 20, 28, 0.6);
+            border: 1px solid var(--border-subtle);
+            border-radius: var(--radius-sm);
+            color: var(--text-primary);
+            font-size: 1rem;
+            font-weight: 600;
+            transition: var(--transition-smooth);
+            font-family: 'Cairo', sans-serif;
+        }
+
+        .form-group input:focus,
+        .form-group select:focus {
+            outline: none;
+            border-color: var(--primary);
+            box-shadow: 0 0 20px var(--primary-glow);
+            background: rgba(20, 20, 28, 0.8);
+        }
+
+        .form-group input::placeholder {
+            color: var(--text-muted);
+        }
+
+        .form-group select {
+            cursor: pointer;
+            appearance: none;
+            -webkit-appearance: none;
+            -moz-appearance: none;
+            background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='12' viewBox='0 0 12 12'%3E%3Cpath fill='%23e63946' d='M6 8L1 3h10z'/%3E%3C/svg%3E");
+            background-repeat: no-repeat;
+            background-position: left 1rem center;
+            padding-left: 2.5rem;
+        }
+
+        .form-group select option {
+            background: var(--surface);
+            color: var(--text-primary);
+        }
+
+        .password-wrapper {
+            position: relative;
+        }
+
+        .password-wrapper input {
+            padding-left: 3rem;
+        }
+
+        .password-toggle {
+            position: absolute;
+            left: 1rem;
+            top: 50%;
+            transform: translateY(-50%);
+            background: none;
+            border: none;
+            color: var(--text-muted);
+            cursor: pointer;
+            font-size: 1.1rem;
+            transition: var(--transition-fast);
+            z-index: 2;
+        }
+
+        .password-toggle:hover {
+            color: var(--primary);
+        }
+
+        .gender-options {
+            display: flex;
+            gap: 1rem;
+            margin-top: 0.5rem;
+        }
+
+        .gender-option {
+            flex: 1;
+            position: relative;
+        }
+
+        .gender-option input[type="radio"] {
+            position: absolute;
+            opacity: 0;
+            width: 0;
+            height: 0;
+        }
+
+        .gender-option label {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 0.75rem;
+            padding: 1rem;
+            background: rgba(20, 20, 28, 0.6);
+            border: 1px solid var(--border-subtle);
+            border-radius: var(--radius-sm);
+            cursor: pointer;
+            transition: var(--transition-smooth);
+            font-weight: 700;
+            color: var(--text-secondary);
+            text-transform: none;
+            letter-spacing: 0;
+            margin-bottom: 0;
+        }
+
+        .gender-option input[type="radio"]:checked + label {
+            background: var(--primary-subtle);
+            border-color: var(--primary);
+            color: #fff;
+            box-shadow: 0 0 20px var(--primary-glow);
+        }
+
+        .gender-option label:hover {
+            border-color: var(--border-medium);
+            transform: translateY(-2px);
+        }
+
+        .error-message {
+            background: rgba(230, 57, 70, 0.15);
+            border: 1px solid rgba(230, 57, 70, 0.3);
+            color: var(--primary-soft);
+            padding: 0.875rem 1.25rem;
+            border-radius: var(--radius-sm);
+            font-size: 0.9rem;
+            font-weight: 600;
+            margin-bottom: 1.5rem;
+            display: none;
+            align-items: center;
+            gap: 0.75rem;
+            animation: shake 0.5s ease;
+        }
+
+        .error-message.show {
+            display: flex;
+        }
+
+        .error-message i {
+            font-size: 1.1rem;
+        }
+
+        @keyframes shake {
+            0%, 100% { transform: translateX(0); }
+            25% { transform: translateX(-10px); }
+            75% { transform: translateX(10px); }
+        }
+
+        .success-message {
+            background: rgba(0, 255, 136, 0.15);
+            border: 1px solid rgba(0, 255, 136, 0.3);
+            color: #00ff88;
+            padding: 0.875rem 1.25rem;
+            border-radius: var(--radius-sm);
+            font-size: 0.9rem;
+            font-weight: 600;
+            margin-bottom: 1.5rem;
+            display: none;
+            align-items: center;
+            gap: 0.75rem;
+        }
+
+        .success-message.show {
+            display: flex;
+        }
+
+        .btn-auth {
+            width: 100%;
+            padding: 1.125rem;
+            background: var(--gradient-primary);
+            color: #fff;
+            border: none;
+            border-radius: var(--radius-sm);
+            font-size: 1.1rem;
+            font-weight: 800;
+            cursor: pointer;
+            transition: var(--transition-smooth);
+            text-transform: uppercase;
+            letter-spacing: 1.5px;
+            position: relative;
+            overflow: hidden;
+            font-family: 'Cairo', sans-serif;
+            margin-top: 1rem;
+        }
+
+        .btn-auth::before {
+            content: '';
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            width: 0;
+            height: 0;
+            background: rgba(255, 255, 255, 0.2);
+            border-radius: 50%;
+            transform: translate(-50%, -50%);
+            transition: width 0.6s, height 0.6s;
+        }
+
+        .btn-auth:hover::before {
+            width: 400px;
+            height: 400px;
+        }
+
+        .btn-auth:hover {
+            transform: translateY(-3px) scale(1.02);
+            box-shadow: var(--shadow-glow);
+        }
+
+        .btn-auth:active {
+            transform: translateY(-1px) scale(1.01);
+        }
+
+        .auth-footer {
+            text-align: center;
+            margin-top: 2rem;
+            padding-top: 1.5rem;
+            border-top: 1px solid var(--border-subtle);
+            position: relative;
+            z-index: 1;
+        }
+
+        .auth-footer p {
+            color: var(--text-muted);
+            font-size: 0.9rem;
+            font-weight: 600;
+        }
+
+        .auth-footer a {
+            color: var(--primary-soft);
+            text-decoration: none;
+            font-weight: 800;
+            transition: var(--transition-fast);
+            cursor: pointer;
+        }
+
+        .auth-footer a:hover {
+            color: #fff;
+            text-shadow: 0 0 10px var(--primary-glow);
+        }
+
+        .remember-forgot {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 1.5rem;
+            flex-wrap: wrap;
+            gap: 1rem;
+        }
+
+        .remember-me {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            cursor: pointer;
+        }
+
+        .remember-me input[type="checkbox"] {
+            width: 18px;
+            height: 18px;
+            accent-color: var(--primary);
+            cursor: pointer;
+        }
+
+        .remember-me label {
+            color: var(--text-secondary);
+            font-size: 0.9rem;
+            font-weight: 600;
+            cursor: pointer;
+            margin-bottom: 0;
+            text-transform: none;
+            letter-spacing: 0;
+        }
+
+        .forgot-password {
+            color: var(--accent);
+            text-decoration: none;
+            font-size: 0.9rem;
+            font-weight: 700;
+            transition: var(--transition-fast);
+            cursor: pointer;
+        }
+
+        .forgot-password:hover {
+            color: #fff;
+            text-shadow: 0 0 10px var(--accent-glow);
+        }
+
+        .auth-divider {
+            display: flex;
+            align-items: center;
+            margin: 1.5rem 0;
+            gap: 1rem;
+        }
+
+        .auth-divider::before,
+        .auth-divider::after {
+            content: '';
+            flex: 1;
+            height: 1px;
+            background: var(--border-subtle);
+        }
+
+        .auth-divider span {
+            color: var(--text-muted);
+            font-size: 0.85rem;
+            font-weight: 600;
+        }
+
+        .user-info-display {
+            background: rgba(0, 217, 255, 0.1);
+            border: 1px solid rgba(0, 217, 255, 0.2);
+            padding: 1rem 1.25rem;
+            border-radius: var(--radius-sm);
+            margin-bottom: 1.5rem;
+            display: none;
+        }
+
+        .user-info-display.show {
+            display: block;
+        }
+
+        .user-info-display p {
+            color: var(--text-secondary);
+            font-size: 0.9rem;
+            font-weight: 600;
+            margin-bottom: 0.25rem;
+        }
+
+        .user-info-display p:last-child {
+            margin-bottom: 0;
+        }
+
+        .user-info-display strong {
+            color: var(--accent);
+        }
+
+        /* Page Loader */
+        .page-loader {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: var(--bg-base);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            z-index: 9999;
+            transition: opacity 0.6s ease, visibility 0.6s ease;
+        }
+
+        .page-loader.hidden {
+            opacity: 0;
+            visibility: hidden;
+        }
+
+        .loader {
+            width: 50px;
+            height: 50px;
+            border: 3px solid rgba(230, 57, 70, 0.2);
+            border-top-color: var(--primary);
+            border-radius: 50%;
+            animation: spin 1s linear infinite;
+        }
+
+        @keyframes spin {
+            to { transform: rotate(360deg); }
+        }
+
+        /* Premium Sidebar */
+        .sidebar {
+            width: 320px;
+            background: var(--surface-panel);
+            backdrop-filter: blur(40px) saturate(180%);
+            -webkit-backdrop-filter: blur(40px) saturate(180%);
+            border-left: 1px solid var(--border-subtle);
+            height: 100vh;
+            position: fixed;
+            right: 0;
+            top: 0;
+            display: flex;
+            flex-direction: column;
+            padding: 2.5rem 1.75rem;
+            z-index: 1000;
+            box-shadow: -10px 0 60px rgba(0, 0, 0, 0.6);
+            overflow-y: auto;
+            transition: var(--transition-smooth);
+        }
+
+        .sidebar::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(180deg, rgba(230, 57, 70, 0.08) 0%, transparent 40%, transparent 60%, rgba(0, 217, 255, 0.03) 100%);
+            pointer-events: none;
+        }
+
+        .logo {
+            font-size: 2.2rem;
+            font-weight: 900;
+            text-align: center;
+            margin-bottom: 3.5rem;
+            letter-spacing: 4px;
+            text-transform: uppercase;
+            color: #fff;
+            position: relative;
+            background: linear-gradient(135deg, #fff 0%, #e0e0e0 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .logo span { 
+            background: var(--gradient-primary);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .logo-status {
+            position: absolute;
+            top: -18px;
+            right: 50%;
+            transform: translateX(50%);
+            font-size: 0.65rem;
+            color: #00ff88;
+            letter-spacing: 3px;
+            font-weight: 700;
+            display: flex;
+            align-items: center;
+            gap: 6px;
+            white-space: nowrap;
+        }
+
+        .logo-status::before {
+            content: '';
+            width: 6px;
+            height: 6px;
+            background: #00ff88;
+            border-radius: 50%;
+            box-shadow: 0 0 10px #00ff88;
+            animation: statusPulse 2s ease-in-out infinite;
+        }
+
+        @keyframes statusPulse {
+            0%, 100% { opacity: 1; box-shadow: 0 0 10px #00ff88; }
+            50% { opacity: 0.5; box-shadow: 0 0 5px #00ff88; }
+        }
+
+        .nav-section {
+            margin-bottom: 2rem;
+        }
+
+        .nav-label {
+            color: var(--text-muted);
+            font-size: 0.7rem;
+            margin-bottom: 1rem;
+            text-transform: uppercase;
+            letter-spacing: 2.5px;
+            font-weight: 700;
+            padding: 0 0.5rem;
+        }
+
+        .sidebar-nav { 
+            display: flex; 
+            flex-direction: column; 
+            gap: 8px; 
+        }
+
+        .sidebar-nav a {
+            color: var(--text-secondary);
+            text-decoration: none;
+            padding: 1rem 1.25rem;
+            font-weight: 700;
+            font-size: 0.95rem;
+            transition: var(--transition-smooth);
+            display: flex;
+            align-items: center;
+            gap: 14px;
+            background: rgba(255, 255, 255, 0.02);
+            border: 1px solid var(--border-subtle);
+            border-radius: var(--radius-sm);
+            position: relative;
+            overflow: hidden;
+            cursor: pointer;
+        }
+
+        .sidebar-nav a::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            right: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(230, 57, 70, 0.15), transparent);
+            transition: right 0.6s ease;
+        }
+
+        .sidebar-nav a::after {
+            content: '';
+            position: absolute;
+            top: 50%;
+            right: 50%;
+            width: 0;
+            height: 0;
+            background: rgba(230, 57, 70, 0.1);
+            border-radius: 50%;
+            transform: translate(50%, -50%);
+            transition: width 0.6s, height 0.6s;
+        }
+
+        .sidebar-nav a:hover::before { right: 100%; }
+        .sidebar-nav a:hover::after { width: 300px; height: 300px; }
+
+        .sidebar-nav a:hover, .sidebar-nav a.active-link {
+            background: var(--primary-subtle);
+            color: #fff;
+            border-color: rgba(230, 57, 70, 0.4);
+            box-shadow: var(--shadow-glow), inset 0 1px 0 rgba(255, 255, 255, 0.1);
+            transform: translateX(-4px);
+        }
+
+        .sidebar-nav a i { 
+            font-size: 1.1rem; 
+            transition: var(--transition-smooth); 
+            color: inherit;
+            position: relative;
+            z-index: 1;
+            width: 20px;
+            text-align: center;
+        }
+
+        .sidebar-nav a span {
+            position: relative;
+            z-index: 1;
+        }
+
+        .sidebar-nav a.active-link i {
+            color: var(--primary-soft);
+        }
+
+        /* Main Wrapper */
+        .main-wrapper {
+            margin-right: 320px;
+            width: calc(100% - 320px);
+            padding: 4rem 5rem;
+            min-height: 100vh;
+            overflow-x: hidden;
+            position: relative;
+        }
+
+        .bento-grid {
+            display: grid;
+            grid-template-columns: repeat(12, 1fr);
+            gap: 24px;
+            max-width: 1600px;
+            margin: 0 auto;
+        }
+
+        .bento-item {
+            background: var(--gradient-card);
+            padding: 2.5rem;
+            position: relative;
+            border: 1px solid var(--border-subtle);
+            border-radius: var(--radius-md);
+            transition: var(--transition-smooth);
+            backdrop-filter: blur(20px);
+            -webkit-backdrop-filter: blur(20px);
+            opacity: 0;
+            transform: translateY(40px);
+        }
+
+        .bento-item.revealed {
+            animation: revealUp 0.8s cubic-bezier(0.4, 0, 0.2, 1) forwards;
+        }
+
+        .bento-item:nth-child(1) { animation-delay: 0.1s; }
+        .bento-item:nth-child(2) { animation-delay: 0.2s; }
+        .bento-item:nth-child(3) { animation-delay: 0.3s; }
+        .bento-item:nth-child(4) { animation-delay: 0.4s; }
+        .bento-item:nth-child(5) { animation-delay: 0.5s; }
+        .bento-item:nth-child(6) { animation-delay: 0.6s; }
+        .bento-item:nth-child(7) { animation-delay: 0.7s; }
+
+        @keyframes revealUp {
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .bento-item::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(135deg, rgba(230, 57, 70, 0.08) 0%, transparent 50%);
+            opacity: 0;
+            transition: opacity 0.4s ease;
+            pointer-events: none;
+            border-radius: var(--radius-md);
+        }
+
+        .bento-item:hover::before { opacity: 1; }
+
+        .bento-item:hover {
+            transform: translateY(-6px);
+            box-shadow: var(--shadow-lg), var(--shadow-glow);
+            background: rgba(20, 20, 30, 0.95);
+            border-color: rgba(230, 57, 70, 0.3);
+        }
+
+        /* Hero Section */
+        .bento-hero {
+            grid-column: span 12;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            background: linear-gradient(135deg, rgba(230, 57, 70, 0.12) 0%, rgba(6, 6, 10, 0.95) 100%);
+            position: relative;
+            padding: 4rem;
+            overflow: hidden;
+            border: 1px solid rgba(230, 57, 70, 0.2);
+        }
+
+        .bento-hero::after {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: radial-gradient(circle at left, transparent 0%, rgba(6, 6, 10, 0.9) 70%);
+            z-index: 0;
+            pointer-events: none;
+        }
+
+        .hero-text { 
+            position: relative; 
+            z-index: 1; 
+            flex: 1;
+        }
+
+        .hero-text h1 {
+            font-size: 4.5rem;
+            font-weight: 900;
+            margin-bottom: 1.5rem;
+            line-height: 1.1;
+            text-transform: uppercase;
+            position: relative;
+            color: #fff;
+            letter-spacing: -1px;
+        }
+
+        .hero-text h1 span {
+            background: var(--gradient-primary);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            display: inline-block;
+        }
+
+        .hero-text p {
+            font-size: 1.25rem;
+            color: var(--text-secondary);
+            max-width: 600px;
+            font-weight: 600;
+            border-right: 4px solid var(--primary);
+            padding-right: 1.5rem;
+            line-height: 1.9;
+        }
+
+        .hero-image { 
+            position: relative; 
+            z-index: 1; 
+            flex: 0 0 480px;
+        }
+
+        .hero-image img {
+            width: 100%;
+            filter: grayscale(30%) contrast(1.1);
+            transition: var(--transition-smooth);
+            border-radius: var(--radius-md);
+            border: 1px solid var(--border-medium);
+            box-shadow: var(--shadow-lg);
+        }
+
+        .hero-image:hover img { 
+            filter: grayscale(0%) contrast(1.05); 
+            box-shadow: var(--shadow-glow), var(--shadow-lg);
+            transform: scale(1.03);
+        }
+
+        /* Community Section */
+        .bento-community {
+            grid-column: span 8;
+            font-size: 1.15rem;
+            line-height: 2;
+            color: var(--text-secondary);
+            font-weight: 600;
+        }
+
+        .bento-community h2 { 
+            color: #fff; 
+            margin-bottom: 1.5rem; 
+            font-size: 2rem; 
+            text-transform: uppercase; 
+            display: flex; 
+            align-items: center; 
+            gap: 14px;
+            font-weight: 800;
+        }
+
+        .bento-community h2 i { 
+            color: var(--primary);
+            font-size: 1.5rem;
+        }
+
+        /* Discord Section */
+        .bento-discord {
+            grid-column: span 4;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            background: linear-gradient(135deg, rgba(88, 101, 242, 0.2) 0%, rgba(30, 33, 58, 0.9) 100%);
+            color: #fff;
+            text-decoration: none;
+            border: 1px solid rgba(88, 101, 242, 0.3);
+            transition: var(--transition-smooth);
+        }
+
+        .bento-discord:hover {
+            transform: translateY(-8px) scale(1.02);
+            box-shadow: 0 20px 60px rgba(88, 101, 242, 0.4);
+            border-color: rgba(88, 101, 242, 0.6);
+        }
+
+        .bento-discord i { 
+            font-size: 5rem; 
+            margin-bottom: 1rem; 
+            filter: drop-shadow(0 0 25px rgba(88, 101, 242, 0.6));
+            transition: var(--transition-smooth);
+        }
+
+        .bento-discord:hover i { 
+            transform: scale(1.1) translateY(-8px) rotate(5deg); 
+            filter: drop-shadow(0 0 40px rgba(88, 101, 242, 0.8));
+        }
+
+        .bento-discord h3 {
+            font-weight: 800;
+            font-size: 1.6rem;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        /* Twitter Section */
+        .bento-twitter {
+            grid-column: span 12;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            background: linear-gradient(90deg, rgba(29, 161, 242, 0.12) 0%, rgba(6, 6, 10, 0.9) 100%);
+            border-left: 4px solid #1DA1F2;
+            border-top: none;
+            transition: var(--transition-smooth);
+        }
+
+        .bento-twitter:hover {
+            box-shadow: 0 10px 50px rgba(29, 161, 242, 0.25);
+            border-left-color: #1DA1F2;
+        }
+
+        .twitter-info h3 { 
+            font-size: 2.2rem; 
+            color: #1DA1F2; 
+            margin-bottom: 1rem; 
+            font-weight: 900; 
+            letter-spacing: 0.5px;
+        }
+
+        .twitter-info p { 
+            max-width: 800px; 
+            color: var(--text-secondary); 
+            font-size: 1.1rem; 
+            font-weight: 600;
+            line-height: 1.8;
+        }
+
+        .btn-cyber {
+            background: transparent;
+            color: #1DA1F2;
+            padding: 1rem 2.5rem;
+            font-weight: 800;
+            text-decoration: none;
+            font-size: 1.1rem;
+            transition: var(--transition-smooth);
+            border: 2px solid #1DA1F2;
+            position: relative;
+            overflow: hidden;
+            display: inline-block;
+            cursor: pointer;
+            border-radius: var(--radius-sm);
+            font-family: 'Cairo', sans-serif;
+        }
+
+        .btn-cyber::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            right: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(29, 161, 242, 0.3), transparent);
+            transition: right 0.6s ease;
+        }
+
+        .btn-cyber:hover::before { right: 100%; }
+
+        .btn-cyber:hover { 
+            background: #1DA1F2; 
+            color: #000; 
+            box-shadow: 0 0 35px rgba(29, 161, 242, 0.5);
+            transform: translateY(-3px) scale(1.05);
+        }
+
+        /* Video Section */
+        .bento-video { 
+            grid-column: span 12; 
+            padding: 0; 
+            aspect-ratio: 21/9; 
+            border: 1px solid rgba(230, 57, 70, 0.3);
+            overflow: hidden;
+            border-radius: var(--radius-md);
+        }
+
+        .video-overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(6, 6, 10, 0.9);
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            backdrop-filter: blur(10px);
+            -webkit-backdrop-filter: blur(10px);
+            transition: var(--transition-smooth);
+        }
+
+        .video-overlay:hover {
+            background: rgba(6, 6, 10, 0.75);
+        }
+
+        .video-overlay button {
+            background: var(--gradient-primary);
+            color: #fff;
+            border: none;
+            padding: 1.25rem 3.5rem;
+            font-size: 1.2rem;
+            font-weight: 800;
+            cursor: pointer;
+            transition: var(--transition-smooth);
+            border-radius: var(--radius-sm);
+            text-transform: uppercase;
+            letter-spacing: 1.5px;
+            position: relative;
+            overflow: hidden;
+            font-family: 'Cairo', sans-serif;
+        }
+
+        .video-overlay button::before {
+            content: '';
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            width: 0;
+            height: 0;
+            background: rgba(255, 255, 255, 0.2);
+            border-radius: 50%;
+            transform: translate(-50%, -50%);
+            transition: width 0.6s, height 0.6s;
+        }
+
+        .video-overlay button:hover::before {
+            width: 400px;
+            height: 400px;
+        }
+
+        .video-overlay button:hover { 
+            background: #fff; 
+            color: var(--primary); 
+            box-shadow: 0 0 45px var(--primary-glow);
+            transform: scale(1.05);
+        }
+
+        .video-iframe { 
+            width: 100%; 
+            height: 100%; 
+            border: none; 
+        }
+
+        /* Creators Section */
+        .bento-creators-title { 
+            grid-column: span 12; 
+            text-align: center; 
+            margin-top: 3rem;
+            opacity: 0;
+        }
+
+        .bento-creators-title.revealed {
+            animation: revealUp 0.8s cubic-bezier(0.4, 0, 0.2, 1) forwards;
+        }
+
+        .bento-creators-title h2 { 
+            font-size: 2.5rem; 
+            color: #fff; 
+            text-transform: uppercase; 
+            font-weight: 900; 
+            letter-spacing: 2px;
+        }
+
+        .bento-creators-title h2 span { 
+            background: var(--gradient-primary);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .bento-creator {
+            grid-column: span 3;
+            text-align: center;
+            text-decoration: none;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            background: rgba(10, 10, 14, 0.6);
+            border: 1px solid var(--border-subtle);
+            border-radius: var(--radius-md);
+            transition: var(--transition-smooth);
+            opacity: 0;
+            padding: 2rem 1.5rem;
+        }
+
+        .bento-creator.revealed {
+            animation: revealUp 0.8s cubic-bezier(0.4, 0, 0.2, 1) forwards;
+        }
+
+        .bento-creator:nth-child(2) { animation-delay: 0.6s; }
+        .bento-creator:nth-child(3) { animation-delay: 0.7s; }
+        .bento-creator:nth-child(4) { animation-delay: 0.8s; }
+
+        .bento-creator:hover { 
+            background: rgba(230, 57, 70, 0.1); 
+            border-color: rgba(230, 57, 70, 0.4);
+            transform: translateY(-10px);
+            box-shadow: var(--shadow-glow);
+        }
+
+        .bento-creator img {
+            width: 100px;
+            height: 100px;
+            object-fit: cover;
+            border: 3px solid #1a1a24;
+            margin-bottom: 1.5rem;
+            transition: 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+            border-radius: 50%;
+        }
+
+        .bento-creator:hover img { 
+            border-color: var(--primary); 
+            transform: scale(1.1) rotate(5deg); 
+            box-shadow: 0 0 35px var(--primary-glow);
+        }
+
+        .bento-creator h4 { 
+            color: #fff; 
+            font-size: 1.3rem; 
+            margin-bottom: 0.75rem; 
+            font-weight: 800; 
+        }
+
+        .bento-creator p { 
+            color: var(--primary-soft); 
+            font-size: 0.95rem; 
+            font-weight: 700; 
+            background: rgba(230, 57, 70, 0.1); 
+            padding: 0.4rem 1rem; 
+            border-radius: 20px;
+            transition: var(--transition-smooth);
+            border: 1px solid rgba(230, 57, 70, 0.2);
+        }
+
+        .bento-creator:hover p {
+            background: rgba(230, 57, 70, 0.2);
+            box-shadow: 0 0 20px rgba(230, 57, 70, 0.3);
+        }
+
+        /* Developer Section */
+        .dev-section {
+            grid-column: span 12;
+            background: linear-gradient(135deg, rgba(0, 255, 153, 0.08) 0%, rgba(6, 6, 10, 0.95) 100%);
+            border: 1px solid rgba(0, 255, 153, 0.2);
+            border-top: 3px solid #00ff99;
+        }
+
+        .dev-section h2 { 
+            color: #fff; 
+            margin-bottom: 1.5rem; 
+            font-size: 2rem; 
+            text-transform: uppercase; 
+            display: flex; 
+            align-items: center; 
+            gap: 14px;
+            font-weight: 800;
+        }
+
+        .dev-section h2 i { 
+            color: #00ff99; 
+        }
+
+        .dev-section p {
+            color: var(--text-secondary);
+            font-size: 1.05rem;
+            font-weight: 600;
+            line-height: 1.9;
+            margin-bottom: 1rem;
+        }
+
+        .dev-links {
+            display: flex;
+            gap: 1rem;
+            flex-wrap: wrap;
+            margin-top: 1.5rem;
+        }
+
+        .dev-links .btn-cyber {
+            border-radius: var(--radius-sm);
+        }
+
+        .edit-note {
+            background: rgba(20, 20, 28, 0.8);
+            color: var(--text-secondary);
+            padding: 1.25rem;
+            margin-top: 2rem;
+            font-weight: 700;
+            border: 1px solid var(--border-medium);
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+            border-radius: var(--radius-sm);
+            transition: var(--transition-smooth);
+            backdrop-filter: blur(10px);
+        }
+
+        .edit-note:hover {
+            border-color: var(--primary);
+            box-shadow: 0 0 25px rgba(230, 57, 70, 0.2);
+            transform: translateY(-2px);
+        }
+
+        .edit-note i { 
+            color: #00ff88; 
+            font-size: 1.3rem;
+            animation: statusPulse 2s ease-in-out infinite;
+        }
+
+        /* Rules Section */
+        .rules-section { 
+            display: none; 
+            width: 100%; 
+            max-width: 1400px; 
+            margin: 0 auto; 
+            animation: fadeInUp 0.6s cubic-bezier(0.4, 0, 0.2, 1); 
+        }
+
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .rules-nav-container {
+            position: relative;
+            margin-bottom: 2.5rem;
+            padding-bottom: 0.75rem;
+            width: 100%;
+            overflow: hidden;
+        }
+
+        .rules-nav-bar {
+            display: flex;
+            gap: 12px;
+            overflow-x: auto;
+            padding: 0.75rem 0.75rem 1.5rem;
+            scrollbar-width: none;
+            scroll-behavior: smooth;
+        }
+
+        .rules-nav-bar::-webkit-scrollbar { display: none; }
+
+        .rule-tab {
+            flex: 0 0 auto;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            width: 130px;
+            height: 115px;
+            background: rgba(8, 8, 12, 0.8);
+            border: 1px solid var(--border-subtle);
+            border-radius: var(--radius-sm);
+            color: var(--text-muted);
+            text-decoration: none;
+            transition: var(--transition-smooth);
+            position: relative;
+            overflow: hidden;
+            backdrop-filter: blur(10px);
+        }
+
+        .rule-tab::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(135deg, rgba(230, 57, 70, 0.15) 0%, transparent 50%);
+            opacity: 0;
+            transition: opacity 0.3s ease;
+        }
+
+        .rule-tab:hover::before { opacity: 1; }
+
+        .rule-tab i { 
+            font-size: 2.5rem; 
+            margin-bottom: 0.75rem; 
+            z-index: 2; 
+            transition: var(--transition-smooth); 
+        }
+
+        .rule-tab span { 
+            font-size: 0.85rem; 
+            font-weight: 800; 
+            z-index: 2; 
+            transition: var(--transition-smooth); 
+            text-align: center; 
+        }
+
+        .rule-tab:hover { 
+            border-color: var(--border-medium); 
+            color: var(--text-secondary);
+            transform: translateY(-5px);
+            box-shadow: var(--shadow-md);
+        }
+
+        .rule-tab.active-tab {
+            background: var(--gradient-primary);
+            border-color: var(--primary);
+            color: #fff;
+            box-shadow: 0 10px 30px rgba(230, 57, 70, 0.4);
+            transform: translateY(-5px);
+        }
+
+        .rule-tab.active-tab::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: repeating-linear-gradient(0deg, transparent, transparent 3px, rgba(0, 0, 0, 0.1) 3px, rgba(0, 0, 0, 0.1) 6px);
+            z-index: 1;
+        }
+
+        .rules-nav-track {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            height: 3px;
+            background: rgba(255, 255, 255, 0.05);
+            border-radius: 3px;
+        }
+
+        .rules-nav-indicator {
+            position: absolute;
+            bottom: 0;
+            right: 0;
+            height: 3px;
+            background: var(--primary);
+            border-radius: 3px;
+            transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+            box-shadow: 0 0 15px var(--primary);
+        }
+
+        .rule-card {
+            background: rgba(8, 8, 14, 0.95);
+            padding: 3rem;
+            border: 1px solid var(--border-subtle);
+            border-top: 4px solid var(--primary);
+            box-shadow: var(--shadow-lg);
+            width: 100%;
+            overflow-x: hidden;
+            backdrop-filter: blur(20px);
+            border-radius: var(--radius-md);
+            animation: slideUp 0.6s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+
+        @keyframes slideUp {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .rule-card h3 {
+            font-size: 2.5rem;
+            color: #fff;
+            margin-bottom: 2rem;
+            padding-bottom: 1.5rem;
+            text-transform: uppercase;
+            font-weight: 900;
+            border-bottom: 2px solid rgba(230, 57, 70, 0.3);
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+        }
+
+        .rule-card h3 i { 
+            color: var(--primary); 
+        }
+
+        .rule-card ul { 
+            list-style: none; 
+        }
+
+        .rule-card li {
+            margin-bottom: 1rem;
+            padding: 1.25rem 1.5rem;
+            background: rgba(20, 20, 28, 0.5);
+            border-right: 4px solid #2a2a35;
+            font-size: 1.1rem;
+            color: var(--text-secondary);
+            display: flex;
+            gap: 1rem;
+            font-weight: 600;
+            line-height: 1.8;
+            transition: var(--transition-smooth);
+            border-radius: var(--radius-sm);
+        }
+
+        .rule-card li:hover { 
+            background: rgba(230, 57, 70, 0.08); 
+            border-right-color: var(--primary); 
+            transform: translateX(-6px);
+            box-shadow: 0 5px 25px rgba(230, 57, 70, 0.2);
+        }
+
+        .rule-card li i { 
+            color: var(--primary); 
+            margin-top: 0.3rem; 
+            font-size: 0.9rem;
+        }
+
+        .btn-back {
+            display: block;
+            width: fit-content;
+            margin: 3rem auto;
+            background: var(--gradient-primary);
+            color: #fff;
+            padding: 1rem 2.5rem;
+            font-size: 1.1rem;
+            font-weight: 800;
+            cursor: pointer;
+            transition: var(--transition-smooth);
+            border-radius: var(--radius-sm);
+            border: none;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            font-family: 'Cairo', sans-serif;
+        }
+
+        .btn-back:hover {
+            transform: translateY(-3px) scale(1.05);
+            box-shadow: var(--shadow-glow);
+        }
+
+        footer { 
+            text-align: center; 
+            margin-top: 4rem; 
+            color: var(--text-muted); 
+            font-weight: 700; 
+            grid-column: span 12; 
+            padding-bottom: 3rem; 
+            letter-spacing: 2px;
+            font-size: 0.9rem;
+            transition: var(--transition-smooth);
+        }
+
+        footer:hover {
+            color: var(--primary-soft);
+            text-shadow: 0 0 20px var(--primary-glow);
+        }
+
+        /* Scroll to Top */
+        .scroll-top-btn {
+            position: fixed;
+            bottom: 2.5rem;
+            left: 2.5rem;
+            width: 56px;
+            height: 56px;
+            background: var(--gradient-primary);
+            color: #fff;
+            border: none;
+            font-size: 1.5rem;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            z-index: 1000;
+            opacity: 0;
+            visibility: hidden;
+            border-radius: 50%;
+            transition: var(--transition-smooth);
+            box-shadow: 0 10px 30px rgba(230, 57, 70, 0.4);
+        }
+
+        .scroll-top-btn.show { 
+            opacity: 1; 
+            visibility: visible; 
+            animation: bounceIn 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+        }
+
+        @keyframes bounceIn {
+            0% { transform: scale(0) rotate(-180deg); }
+            50% { transform: scale(1.2) rotate(10deg); }
+            100% { transform: scale(1) rotate(0deg); }
+        }
+
+        .scroll-top-btn:hover { 
+            background: #fff; 
+            color: var(--primary); 
+            transform: translateY(-8px) scale(1.1);
+            box-shadow: 0 15px 45px var(--primary-glow);
+        }
+
+        /* Responsive Design */
+        @media (max-width: 1400px) { 
+            .bento-creator { 
+                grid-column: span 6; 
+            } 
+        }
+
+        @media (max-width: 992px) {
+            body { 
+                flex-direction: column; 
+            }
+
+            .sidebar { 
+                width: 100%; 
+                height: auto; 
+                position: static; 
+                padding: 1.5rem; 
+                flex-direction: column; 
+                border-left: none; 
+                border-bottom: 2px solid rgba(230, 57, 70, 0.3);
+            }
+
+            .logo { 
+                margin-bottom: 1.5rem; 
+                font-size: 1.8rem; 
+            }
+
+            .nav-label { 
+                display: none; 
+            }
+
+            .sidebar-nav { 
+                flex-direction: row; 
+                overflow-x: auto; 
+                width: 100%; 
+                flex-wrap: nowrap; 
+                margin: 0.5rem 0; 
+                gap: 8px;
+            }
+
+            .sidebar-nav a { 
+                white-space: nowrap; 
+                font-size: 0.9rem; 
+                padding: 0.75rem 1.25rem; 
+                border-radius: var(--radius-sm);
+            }
+
+            .main-wrapper { 
+                margin-right: 0; 
+                width: 100%; 
+                padding: 2rem 1.5rem; 
+                overflow-x: hidden; 
+            }
+
+            .bento-hero { 
+                flex-direction: column; 
+                text-align: center; 
+                padding: 2.5rem; 
+            }
+
+            .hero-text h1 { 
+                font-size: 2.8rem; 
+            }
+
+            .hero-text p { 
+                border-right: none; 
+                padding-right: 0; 
+                margin: 0 auto 2rem; 
+            }
+
+            .hero-image { 
+                flex: 0 0 auto;
+                width: 100%;
+                max-width: 350px;
+                margin: 0 auto;
+            }
+
+            .bento-community, .bento-discord, .bento-twitter, .bento-video, .bento-creator { 
+                grid-column: span 12; 
+            }
+
+            .bento-twitter { 
+                flex-direction: column; 
+                text-align: center; 
+                gap: 2rem; 
+                padding: 2.5rem 1.5rem;
+            }
+
+            .bento-item { 
+                padding: 2rem 1.5rem; 
+            }
+
+            .rule-card { 
+                padding: 2rem 1.25rem; 
+                width: 100%; 
+            }
+
+            .rule-card h3 { 
+                font-size: 1.6rem; 
+                flex-direction: column; 
+                text-align: center; 
+                gap: 0.75rem;
+            }
+
+            .rule-card li { 
+                font-size: 1rem; 
+                padding: 1rem; 
+                gap: 0.75rem;
+            }
+
+            .rule-tab { 
+                width: 100px; 
+                height: 95px; 
+            }
+
+            .rule-tab i { 
+                font-size: 1.8rem; 
+                margin-bottom: 0.5rem;
+            }
+
+            .rule-tab span { 
+                font-size: 0.75rem; 
+            }
+
+            .scroll-top-btn { 
+                bottom: 1.5rem; 
+                left: 1.5rem; 
+                width: 48px; 
+                height: 48px; 
+                font-size: 1.2rem; 
+            }
+
+            .hero-text h1 {
+                font-size: 2.2rem;
+            }
+
+            .bento-community h2 {
+                font-size: 1.5rem;
+            }
+
+            .twitter-info h3 {
+                font-size: 1.6rem;
+            }
+
+            .auth-container {
+                padding: 2rem 1.5rem;
+            }
+
+            .auth-logo h2 {
+                font-size: 1.5rem;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .main-wrapper {
+                padding: 1.5rem 1rem;
+            }
+
+            .bento-grid {
+                gap: 16px;
+            }
+
+            .bento-item {
+                padding: 1.5rem 1.25rem;
+            }
+
+            .hero-text h1 {
+                font-size: 1.8rem;
+            }
+
+            .hero-text p {
+                font-size: 1rem;
+            }
+
+            .btn-cyber {
+                padding: 0.875rem 2rem;
+                font-size: 1rem;
+            }
+
+            .rule-card h3 {
+                font-size: 1.3rem;
+            }
+
+            .rule-card li {
+                font-size: 0.95rem;
+                padding: 0.875rem;
+            }
+
+            .bento-video {
+                aspect-ratio: 16/9;
+            }
+
+            .dev-links {
+                flex-direction: column;
+            }
+
+            .dev-links .btn-cyber {
+                width: 100%;
+                text-align: center;
+            }
+
+            .auth-container {
+                padding: 1.5rem 1.25rem;
+                max-width: 100%;
+            }
+
+            .form-group {
+                margin-bottom: 1.25rem;
+            }
+
+            .gender-options {
+                flex-direction: column;
+                gap: 0.75rem;
+            }
+
+            .remember-forgot {
+                flex-direction: column;
+                align-items: flex-start;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <div class="page-loader" id="pageLoader">
+        <div class="loader"></div>
+    </div>
+
+    <!-- Authentication Overlay -->
+    <div class="auth-overlay" id="authOverlay">
+        <div class="auth-container">
+            <div class="auth-logo">
+                <h2>LIONS <span>FAMILY</span></h2>
+                <p id="authSubtitle">نظام المصادقة الآمن</p>
+            </div>
+
+            <!-- Error/Success Messages -->
+            <div class="error-message" id="authError">
+                <i class="fas fa-exclamation-circle"></i>
+                <span id="authErrorText"></span>
+            </div>
+
+            <div class="success-message" id="authSuccess">
+                <i class="fas fa-check-circle"></i>
+                <span id="authSuccessText"></span>
+            </div>
+
+            <!-- Registration Form -->
+            <form class="auth-form" id="registerForm">
+                <div class="form-group">
+                    <label><i class="fas fa-user"></i> اسم المستخدم</label>
+                    <input type="text" id="regUsername" placeholder="أدخل اسم المستخدم" autocomplete="username">
+                </div>
+
+                <div class="form-group">
+                    <label><i class="fas fa-lock"></i> كلمة المرور</label>
+                    <div class="password-wrapper">
+                        <input type="password" id="regPassword" placeholder="أدخل كلمة المرور" autocomplete="new-password">
+                        <button type="button" class="password-toggle" onclick="togglePassword('regPassword', this)">
+                            <i class="fas fa-eye"></i>
+                        </button>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label><i class="fas fa-globe"></i> الدولة</label>
+                    <select id="regCountry">
+                        <option value="">اختر الدولة</option>
+                        <option value="MA">المغرب</option>
+                        <option value="DZ">الجزائر</option>
+                        <option value="TN">تونس</option>
+                        <option value="EG">مصر</option>
+                        <option value="SA">السعودية</option>
+                        <option value="AE">الإمارات</option>
+                        <option value="KW">الكويت</option>
+                        <option value="QA">قطر</option>
+                        <option value="BH">البحرين</option>
+                        <option value="OM">عمان</option>
+                        <option value="JO">الأردن</option>
+                        <option value="LB">لبنان</option>
+                        <option value="SY">سوريا</option>
+                        <option value="IQ">العراق</option>
+                        <option value="YE">اليمن</option>
+                        <option value="LY">ليبيا</option>
+                        <option value="SD">السودان</option>
+                        <option value="PS">فلسطين</option>
+                        <option value="OTHER">أخرى</option>
+                    </select>
+                </div>
+
+                <div class="form-group">
+                    <label><i class="fas fa-calendar"></i> العمر</label>
+                    <input type="number" id="regAge" placeholder="أدخل عمرك" min="13" max="120">
+                </div>
+
+                <div class="form-group">
+                    <label><i class="fas fa-venus-mars"></i> الجنس</label>
+                    <div class="gender-options">
+                        <div class="gender-option">
+                            <input type="radio" id="male" name="gender" value="male">
+                            <label for="male"><i class="fas fa-mars"></i> ذكر</label>
+                        </div>
+                        <div class="gender-option">
+                            <input type="radio" id="female" name="gender" value="female">
+                            <label for="female"><i class="fas fa-venus"></i> أنثى</label>
+                        </div>
+                    </div>
+                </div>
+
+                <button type="submit" class="btn-auth">
+                    <i class="fas fa-user-plus"></i> إنشاء الحساب
+                </button>
+            </form>
+
+            <!-- Login Form -->
+            <form class="auth-form" id="loginForm" style="display: none;">
+                <div class="form-group">
+                    <label><i class="fas fa-user"></i> اسم المستخدم</label>
+                    <input type="text" id="loginUsername" placeholder="أدخل اسم المستخدم" autocomplete="username">
+                </div>
+
+                <div class="form-group">
+                    <label><i class="fas fa-lock"></i> كلمة المرور</label>
+                    <div class="password-wrapper">
+                        <input type="password" id="loginPassword" placeholder="أدخل كلمة المرور" autocomplete="current-password">
+                        <button type="button" class="password-toggle" onclick="togglePassword('loginPassword', this)">
+                            <i class="fas fa-eye"></i>
+                        </button>
+                    </div>
+                </div>
+
+                <div class="remember-forgot">
+                    <div class="remember-me">
+                        <input type="checkbox" id="rememberMe">
+                        <label for="rememberMe">تذكرني</label>
+                    </div>
+                    <a class="forgot-password" onclick="forgotPassword()">نسيت كلمة المرور؟</a>
+                </div>
+
+                <button type="submit" class="btn-auth">
+                    <i class="fas fa-sign-in-alt"></i> تسجيل الدخول
+                </button>
+            </form>
+
+            <div class="auth-footer">
+                <p id="authFooterText">ليس لديك حساب؟ <a onclick="showRegister()">إنشاء حساب جديد</a></p>
+            </div>
+        </div>
+    </div>
+
+    <div class="animated-bg"></div>
+    <div class="ambient-orb orb-1"></div>
+    <div class="ambient-orb orb-2"></div>
+    <div class="ambient-orb orb-3"></div>
+    <div class="particles" id="particles"></div>
+
+    <aside class="sidebar">
+        <div class="logo">
+            <div class="logo-status">نظام متصل بالإنترنت</div>
+            LIONS <span>FAMILY</span>
+        </div>
+        
+        <div class="nav-section">
+            <div class="nav-label">PAGE PRANCPAL</div>
+            <nav class="sidebar-nav">
+                <a href="#" id="homeLink" class="active-link"><i class="fas fa-crosshairs"></i> <span>مركز القيادة</span></a>
+                <a href="#" onclick="openRules(); return false;" id="rulesLink"><i class="fas fa-gavel"></i> <span>القوانين</span></a>
+                <a href="#" onclick="openCommands(); return false;" id="commandsLink"><i class="fas fa-terminal"></i> <span>الأوامر</span></a>
+                <a href="https://discord.gg/U5YNZ75ht" target="_blank"><i class="fab fa-discord"></i> <span>ديسكورد</span></a>
+                <a href="#" onclick="logout(); return false;" id="logoutLink" style="display: none;"><i class="fas fa-sign-out-alt"></i> <span>تسجيل الخروج</span></a>
+            </nav>
+        </div>
+    </aside>
+
+    <main class="main-wrapper">
+        <div id="mainContent" class="bento-grid">
+            
+            <div class="bento-item bento-hero">
+                <div class="hero-text">
+                    <h1 class="glitch-effect" data-text="LIONS FAMILY">  <br><span>LIONS</span></h1>
+                    <p>أنت الآن في المنطقة الحمراء. البقاء هنا للأقوى؛ الاحترام يُؤخذ، وليس يُعطى. هل أنت مستعد لتترك بصمتك في شوارعنا؟</p>
+                </div>
+                <div class="hero-image">
+                    <img src="https://i.imgur.com/placeholder.jpg" alt="LIONS FAMILY" onerror="this.src='https://via.placeholder.com/600x400/0a0a0c/ff003c?text=ELITE+SYSTEM';">
+                </div>
+            </div>
+
+            <div class="bento-item bento-community">
+                <h2><i class="fas fa-database"></i> التقارير النظام // مشكلة في المج</h2>
+                مجتمع سيرفر 'LIONS' العربي هو مجتمع حيوي يجمع بين اللاعبين والمؤثرين والمشاهدين، مما يخلق بيئة تفاعلية وغنية. يشارك اللاعبون في بناء تجارب فريدة داخل السيرفر، بينما يساهم المؤثرون والمذيعون في نشر المرح والإثارة من خلال البث المباشر، مما يعزز التفاعل والتواصل بين اللاعبين والجماهير..
+            </div>
+
+            <a href="https://discord.gg/U5YNZ75ht" target="_blank" class="bento-item bento-discord">
+                <i class="fab fa-discord"></i>
+                <h3 style="font-weight: 900; font-size: 1.8rem; text-transform: uppercase;">ديسكورد</h3>
+            </a>
+
+            <div class="bento-item bento-twitter">
+                <div class="twitter-info">
+                    <h3><i class="fab fa-twitter"></i>التردد العام (تويتر RP)</h3>
+                    <p>عِش دورك خارج اللعبة! شارك حياة شخصيتك اليومية، تفاعل مع المواطنين، انشر صور وأخبار حصرية، وكن جزءًا من الترند في مدينة لوس سانتوس.</p>
+                </div>
+                <a href="#" target="_blank" class="btn-cyber">تفعيل الاتصال</a>
+            </div>
+
+            <div class="bento-item bento-video" id="videoContainer">
+                <div class="video-overlay" id="videoOverlay">
+                    <button onclick="playVideo()">[ قم بتفعيل السجل البصري ]</button>
+                </div>
+            </div>
+
+            <div class="bento-creators-title">
+                <h2><span>//</span> // Elite List // <span>//</span></h2>
+            </div>
+
+            <div class="bento-item dev-section">
+                <h2><i class="fas fa-code"></i> مُطوّر أنظمة // يونس</h2>
+
+                <p>مطور ومبرمج من المغرب، عمره 18 سنة، شغوف بعالم البرمجة وتصميم واجهات المستخدم السيبرانية، وتطوير أنظمة الألعاب والمواقع الاحترافية.</p>
+
+                <p>مسؤول عن تطوير واجهة LIONS، تحسين تجربة المستخدم، بناء صفحات الأوامر والقوانين، وربط أنظمة الخادم الداخلية.</p>
+
+                <div class="dev-links">
+
+                    <a href="https://www.youtube.com/@YouneS_GameR25" target="_blank"
+                    class="btn-cyber"
+                    style="border-color:#ff003c;color:#ff003c;">
+                    <i class="fab fa-youtube"></i>قناة واتساب ...
+                    </a>
+
+                    <a href="https://whatsapp.com/channel/0029Vb7rkxrFHWqANrrAF63V" target="_blank"
+                    class="btn-cyber"
+                    style="border-color:#00ff66;color:#00ff66;">
+                    <i class="fab fa-whatsapp"></i> قناة واتساب
+                    </a>
+
+                </div>
+
+                <div class="edit-note" style="margin-top:2rem;">
+                    <i class="fas fa-terminal"></i>
+                    الحالة: متصل // مطور نشط // مهندس ويب أسود
+                </div>
+            </div>
+
+            <a href="https://www.youtube.com/@YouneS_GameR25" target="_blank" class="bento-item bento-creator">
+                <img src="https://cdn.discordapp.com/attachments/1473406092485722123/1517149537540505630/channels4_profileYT.jpg?ex=6a353b1d&is=6a33e99d&hm=45e6e9993b7e6e8a2f8db507ba2e6676d5fd2b0ff20c45472ba297a699596d23" alt="YouneS_GameR25">
+                <h4>يونس جيمر</h4>
+                <p>المدير التنفيذي</p>
+            </a>
+
+            <footer><p>LIONS نظام النخبة // تأسس 2026 // جميع الحقوق محفوظة.</p></footer>
+        </div>
+
+        <div id="rulesSection" class="rules-section">
+            
+            <div class="rules-nav-container">
+                <div class="rules-nav-bar" id="rulesNavBar">
+                    <a href="#" onclick="showRule('general', this); return false;" class="rule-tab active-tab" id="tab-general">
+                        <i class="fas fa-folder"></i><span>القواعد العامة</span>
+                    </a>
+                    <a href="#" onclick="showRule('important', this); return false;" class="rule-tab" id="tab-important">
+                        <i class="fas fa-exclamation-triangle"></i><span>قواعد مهمة</span>
+                    </a>
+                    <a href="#" onclick="showRule('admin', this); return false;" class="rule-tab" id="tab-admin">
+                        <i class="fas fa-user-shield"></i><span>قوانين الإدارة</span>
+                    </a>
+                    <a href="#" onclick="showRule('police', this); return false;" class="rule-tab" id="tab-police">
+                        <i class="fas fa-shield-alt"></i><span>قواعد الشرطة</span>
+                    </a>
+                    <a href="#" onclick="showRule('ems', this); return false;" class="rule-tab" id="tab-ems">
+                        <i class="fas fa-heartbeat"></i><span>قواعد المسعف</span>
+                    </a>
+                    <a href="#" onclick="showRule('gang', this); return false;" class="rule-tab" id="tab-gang">
+                        <i class="fas fa-skull"></i><span>قواعد العصابات</span>
+                    </a>
+                    <a href="#" onclick="showRule('criminal', this); return false;" class="rule-tab" id="tab-criminal">
+                        <i class="fas fa-user-secret"></i><span>القواعد غير القانونية</span>
+                    </a>
+                    <a href="#" onclick="showRule('glossary', this); return false;" class="rule-tab" id="tab-glossary">
+                        <i class="fas fa-terminal"></i><span>الشروط</span>
+                    </a>
+                </div>
+                <div class="rules-nav-track"></div>
+                <div class="rules-nav-indicator" id="navIndicator"></div>
+            </div>
+
+            <div id="ruleDisplay" class="rule-card"></div>
+            
+            <button class="btn-back" onclick="showHome()">إغلاق قاعدة البيانات</button>
+            <footer><p>LIONS ELITE SYSTEM // EST. 2026</p></footer>
+        </div>
+
+        <div id="commandsSection" class="rules-section">
+
+            <div class="rules-nav-container">
+                <div class="rules-nav-bar" id="commandsNavBar">
+                    <a href="#" onclick="showCommand('glossary', this); return false;" class="rule-tab active-tab">
+                        <i class="fas fa-book"></i><span>الشروط</span>
+                    </a>
+
+                    <a href="#" onclick="showCommand('criminal', this); return false;" class="rule-tab">
+                        <i class="fas fa-user-secret"></i><span>غير قانوني</span>
+                    </a>
+
+                    <a href="#" onclick="showCommand('gang', this); return false;" class="rule-tab">
+                        <i class="fas fa-skull"></i><span>العصابات</span>
+                    </a>
+
+                    <a href="#" onclick="showCommand('ems', this); return false;" class="rule-tab">
+                        <i class="fas fa-ambulance"></i><span>طبيب</span>
+                    </a>
+
+                    <a href="#" onclick="showCommand('police', this); return false;" class="rule-tab">
+                        <i class="fas fa-shield-alt"></i><span>شرطة</span>
+                    </a>
+
+                    <a href="#" onclick="showCommand('admin', this); return false;" class="rule-tab">
+                        <i class="fas fa-user-shield"></i><span>إدارة</span>
+                    </a>
+
+                    <a href="#" onclick="showCommand('general', this); return false;" class="rule-tab">
+                        <i class="fas fa-terminal"></i><span>عام</span>
+                    </a>
+                </div>
+
+                <div class="rules-nav-track"></div>
+                <div class="rules-nav-indicator" id="commandsIndicator"></div>
+            </div>
+
+            <div id="commandDisplay" class="rule-card"></div>
+
+            <button class="btn-back" onclick="showHome()">إغلاق قاعدة البيانات</button>
+
+            <footer><p>LIONS ELITE SYSTEM // EST. 2026</p></footer>
+        </div>
+
+
+    </main>
+
+    <button class="scroll-top-btn" id="scrollTopBtn" onclick="scrollToTop()">
+        <i class="fas fa-angle-up"></i>
+    </button>
+
+    <script>
+        // ========== AUTHENTICATION SYSTEM ==========
+        
+        // Password hashing using Web Crypto API (SHA-256)
+        async function hashPassword(password) {
+            const encoder = new TextEncoder();
+            const data = encoder.encode(password);
+            const hashBuffer = await crypto.subtle.digest('SHA-256', data);
+            const hashArray = Array.from(new Uint8Array(hashBuffer));
+            return hashArray.map(b => b.toString(16).padStart(2, '0')).join('');
+        }
+
+        // Get users from localStorage
+        function getUsers() {
+            const users = localStorage.getItem('lionsUsers');
+            return users ? JSON.parse(users) : [];
+        }
+
+        // Save users to localStorage
+        function saveUsers(users) {
+            localStorage.setItem('lionsUsers', JSON.stringify(users));
+        }
+
+        // Check if user is logged in
+        function isLoggedIn() {
+            return sessionStorage.getItem('lionsCurrentUser') !== null;
+        }
+
+        // Get current user
+        function getCurrentUser() {
+            return sessionStorage.getItem('lionsCurrentUser');
+        }
+
+        // Show error message
+        function showError(message) {
+            const errorEl = document.getElementById('authError');
+            const errorText = document.getElementById('authErrorText');
+            errorText.textContent = message;
+            errorEl.classList.add('show');
+            document.getElementById('authSuccess').classList.remove('show');
+            
+            // Hide after 5 seconds
+            setTimeout(() => {
+                errorEl.classList.remove('show');
+            }, 5000);
+        }
+
+        // Show success message
+        function showSuccess(message) {
+            const successEl = document.getElementById('authSuccess');
+            const successText = document.getElementById('authSuccessText');
+            successText.textContent = message;
+            successEl.classList.add('show');
+            document.getElementById('authError').classList.remove('show');
+            
+            // Hide after 5 seconds
+            setTimeout(() => {
+                successEl.classList.remove('show');
+            }, 5000);
+        }
+
+        // Hide messages
+        function hideMessages() {
+            document.getElementById('authError').classList.remove('show');
+            document.getElementById('authSuccess').classList.remove('show');
+        }
+
+        // Toggle password visibility
+        function togglePassword(inputId, button) {
+            const input = document.getElementById(inputId);
+            const icon = button.querySelector('i');
+            
+            if (input.type === 'password') {
+                input.type = 'text';
+                icon.classList.remove('fa-eye');
+                icon.classList.add('fa-eye-slash');
+            } else {
+                input.type = 'password';
+                icon.classList.remove('fa-eye-slash');
+                icon.classList.add('fa-eye');
+            }
+        }
+
+        // Show register form
+        function showRegister() {
+            hideMessages();
+            document.getElementById('registerForm').style.display = 'block';
+            document.getElementById('loginForm').style.display = 'none';
+            document.getElementById('authSubtitle').textContent = 'إنشاء حساب جديد';
+            document.getElementById('authFooterText').innerHTML = 'لديك حساب بالفعل؟ <a onclick="showLogin()">تسجيل الدخول</a>';
+        }
+
+        // Show login form
+        function showLogin() {
+            hideMessages();
+            document.getElementById('registerForm').style.display = 'none';
+            document.getElementById('loginForm').style.display = 'block';
+            document.getElementById('authSubtitle').textContent = 'تسجيل الدخول';
+            document.getElementById('authFooterText').innerHTML = 'ليس لديك حساب؟ <a onclick="showRegister()">إنشاء حساب جديد</a>';
+        }
+
+        // Validate registration form
+        function validateRegistration() {
+            const username = document.getElementById('regUsername').value.trim();
+            const password = document.getElementById('regPassword').value;
+            const country = document.getElementById('regCountry').value;
+            const age = document.getElementById('regAge').value;
+            const gender = document.querySelector('input[name="gender"]:checked');
+
+            if (!username) {
+                showError('يرجى إدخال اسم المستخدم');
+                return false;
+            }
+
+            if (username.length < 3) {
+                showError('اسم المستخدم يجب أن يكون 3 أحرف على الأقل');
+                return false;
+            }
+
+            if (username.length > 20) {
+                showError('اسم المستخدم يجب أن يكون أقل من 20 حرف');
+                return false;
+            }
+
+            if (!/^[a-zA-Z0-9_]+$/.test(username)) {
+                showError('اسم المستخدم يجب أن يحتوي على أحرف إنجليزية وأرقام فقط');
+                return false;
+            }
+
+            if (!password) {
+                showError('يرجى إدخال كلمة المرور');
+                return false;
+            }
+
+            if (password.length < 6) {
+                showError('كلمة المرور يجب أن تكون 6 أحرف على الأقل');
+                return false;
+            }
+
+            if (!country) {
+                showError('يرجى اختيار الدولة');
+                return false;
+            }
+
+            if (!age) {
+                showError('يرجى إدخال العمر');
+                return false;
+            }
+
+            if (age < 13 || age > 120) {
+                showError('العمر يجب أن يكون بين 13 و 120');
+                return false;
+            }
+
+            if (!gender) {
+                showError('يرجى اختيار الجنس');
+                return false;
+            }
+
+            return true;
+        }
+
+        // Validate login form
+        function validateLogin() {
+            const username = document.getElementById('loginUsername').value.trim();
+            const password = document.getElementById('loginPassword').value;
+
+            if (!username) {
+                showError('يرجى إدخال اسم المستخدم');
+                return false;
+            }
+
+            if (!password) {
+                showError('يرجى إدخال كلمة المرور');
+                return false;
+            }
+
+            return true;
+        }
+
+        // Handle registration
+        document.getElementById('registerForm').addEventListener('submit', async function(e) {
+            e.preventDefault();
+            hideMessages();
+
+            if (!validateRegistration()) return;
+
+            const username = document.getElementById('regUsername').value.trim();
+            const password = document.getElementById('regPassword').value;
+            const country = document.getElementById('regCountry').value;
+            const age = document.getElementById('regAge').value;
+            const gender = document.querySelector('input[name="gender"]:checked').value;
+
+            // Check if username already exists
+            const users = getUsers();
+            if (users.some(user => user.username.toLowerCase() === username.toLowerCase())) {
+                showError('اسم المستخدم موجود بالفعل. يرجى اختيار اسم آخر.');
+                return;
+            }
+
+            // Hash password
+            const hashedPassword = await hashPassword(password);
+
+            // Create new user
+            const newUser = {
+                username: username,
+                password: hashedPassword,
+                country: country,
+                age: age,
+                gender: gender,
+                createdAt: new Date().toISOString()
+            };
+
+            users.push(newUser);
+            saveUsers(users);
+
+            showSuccess('تم إنشاء الحساب بنجاح! جاري تسجيل الدخول...');
+            
+            // Auto login after 1.5 seconds
+            setTimeout(() => {
+                loginUser(username);
+            }, 1500);
+        });
+
+        // Handle login
+        document.getElementById('loginForm').addEventListener('submit', async function(e) {
+            e.preventDefault();
+            hideMessages();
+
+            if (!validateLogin()) return;
+
+            const username = document.getElementById('loginUsername').value.trim();
+            const password = document.getElementById('loginPassword').value;
+
+            // Hash password for comparison
+            const hashedPassword = await hashPassword(password);
+
+            // Check credentials
+            const users = getUsers();
+            const user = users.find(u => 
+                u.username.toLowerCase() === username.toLowerCase() && 
+                u.password === hashedPassword
+            );
+
+            if (!user) {
+                showError('اسم المستخدم أو كلمة المرور غير صحيحة');
+                return;
+            }
+
+            showSuccess('تم تسجيل الدخول بنجاح! جاري التحميل...');
+            
+            // Handle remember me
+            if (document.getElementById('rememberMe').checked) {
+                localStorage.setItem('lionsRememberedUser', username);
+            } else {
+                localStorage.removeItem('lionsRememberedUser');
+            }
+
+            setTimeout(() => {
+                loginUser(username);
+            }, 1000);
+        });
+
+        // Login user
+        function loginUser(username) {
+            sessionStorage.setItem('lionsCurrentUser', username);
+            document.getElementById('authOverlay').classList.add('hidden');
+            document.getElementById('logoutLink').style.display = 'flex';
+            
+            // Trigger animations
+            setTimeout(() => {
+                document.querySelectorAll('.bento-item, .bento-creators-title').forEach(item => {
+                    item.classList.add('revealed');
+                });
+            }, 100);
+        }
+
+        // Logout
+        function logout() {
+            sessionStorage.removeItem('lionsCurrentUser');
+            localStorage.removeItem('lionsRememberedUser');
+            document.getElementById('authOverlay').classList.remove('hidden');
+            document.getElementById('logoutLink').style.display = 'none';
+            showLogin();
+            
+            // Clear form fields
+            document.getElementById('loginUsername').value = '';
+            document.getElementById('loginPassword').value = '';
+            document.getElementById('rememberMe').checked = false;
+        }
+
+        // Forgot password
+        function forgotPassword() {
+            const username = document.getElementById('loginUsername').value.trim();
+            
+            if (!username) {
+                showError('يرجى إدخال اسم المستخدم أولاً في حقل اسم المستخدم');
+                return;
+            }
+
+            const users = getUsers();
+            const user = users.find(u => u.username.toLowerCase() === username.toLowerCase());
+            
+            if (!user) {
+                showError('اسم المستخدم غير موجود في النظام');
+                return;
+            }
+
+            // Show user info (in a real app, this would send an email)
+            const countryNames = {
+                'MA': 'المغرب',
+                'DZ': 'الجزائر',
+                'TN': 'تونس',
+                'EG': 'مصر',
+                'SA': 'السعودية',
+                'AE': 'الإمارات',
+                'KW': 'الكويت',
+                'QA': 'قطر',
+                'BH': 'البحرين',
+                'OM': 'عمان',
+                'JO': 'الأردن',
+                'LB': 'لبنان',
+                'SY': 'سوريا',
+                'IQ': 'العراق',
+                'YE': 'اليمن',
+                'LY': 'ليبيا',
+                'SD': 'السودان',
+                'PS': 'فلسطين',
+                'OTHER': 'أخرى'
+            };
+
+            const genderNames = {
+                'male': 'ذكر',
+                'female': 'أنثى'
+            };
+
+            showSuccess(`معلومات الحساب: المستخدم: ${user.username} | الدولة: ${countryNames[user.country] || user.country} | العمر: ${user.age} | الجنس: ${genderNames[user.gender] || user.gender}. في التطبيق الفعلي، سيتم إرسال رابط إعادة تعيين كلمة المرور إلى بريدك الإلكتروني.`);
+        }
+
+        // Initialize authentication
+        function initAuth() {
+            const currentUser = getCurrentUser();
+            
+            if (currentUser) {
+                // User is logged in
+                document.getElementById('authOverlay').classList.add('hidden');
+                document.getElementById('logoutLink').style.display = 'flex';
+            } else {
+                // Check if there are any users
+                const users = getUsers();
+                
+                if (users.length === 0) {
+                    // No users exist, show registration
+                    showRegister();
+                } else {
+                    // Users exist, show login
+                    showLogin();
+                    
+                    // Check for remembered user
+                    const rememberedUser = localStorage.getItem('lionsRememberedUser');
+                    if (rememberedUser) {
+                        document.getElementById('loginUsername').value = rememberedUser;
+                        document.getElementById('rememberMe').checked = true;
+                    }
+                }
+            }
+        }
+
+        // ========== EXISTING WEBSITE FUNCTIONALITY ==========
+        
+        // Page Loader
+        window.addEventListener('load', function() {
+            setTimeout(() => {
+                document.getElementById('pageLoader').classList.add('hidden');
+            }, 800);
+        });
+
+        // Fallback: hide loader after 3 seconds even if load event hasn't fired
+        setTimeout(() => {
+            const loader = document.getElementById('pageLoader');
+            if (loader && !loader.classList.contains('hidden')) {
+                loader.classList.add('hidden');
+            }
+        }, 3000);
+
+        // Create Particles
+        function createParticles() {
+            const particlesContainer = document.getElementById('particles');
+            const particleCount = 50;
+
+            for (let i = 0; i < particleCount; i++) {
+                const particle = document.createElement('div');
+                particle.className = 'particle';
+                particle.style.left = Math.random() * 100 + '%';
+                particle.style.animationDelay = Math.random() * 20 + 's';
+                particle.style.animationDuration = (Math.random() * 10 + 15) + 's';
+                particlesContainer.appendChild(particle);
+            }
+        }
+
+        createParticles();
+
+        // Scroll to Top
+        window.addEventListener('scroll', function() {
+            const scrollBtn = document.getElementById('scrollTopBtn');
+            if (window.scrollY > 400) scrollBtn.classList.add('show');
+            else scrollBtn.classList.remove('show');
+        });
+
+        function scrollToTop() { 
+            window.scrollTo({ top: 0, behavior: 'smooth' }); 
+        }
+
+        // Navigation
+        function openRules() {
+            document.getElementById('mainContent').style.display = 'none';
+            document.getElementById('commandsSection').style.display = 'none';
+            document.getElementById('rulesSection').style.display = 'block';
+            document.getElementById('rulesSection').scrollIntoView({ behavior: 'smooth' });
+            showRule('general', document.getElementById('tab-general'));
+        }
+
+        function openCommands() {
+            document.getElementById('mainContent').style.display = 'none';
+            document.getElementById('rulesSection').style.display = 'none';
+            document.getElementById('commandsSection').style.display = 'block';
+            document.getElementById('commandsSection').scrollIntoView({ behavior: 'smooth' });
+            showCommand('glossary', document.querySelector('#commandsNavBar .rule-tab'));
+        }
+
+        function showHome() {
+            document.getElementById('rulesSection').style.display = 'none';
+            document.getElementById('commandsSection').style.display = 'none';
+            document.getElementById('mainContent').style.display = 'grid';
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+        }
+
+        // Rules Data
+        const rulesData = {
+            general: {
+                title: 'القواعد العامة', icon: 'fa-folder',
+                items: [
+                    'HRP : يجب على جميع اللاعبين الالتزام بالرول بلاي الواقعي في جميع الأوقات، ويمنع القيام بأي تصرف غير منطقي أو مخالف لقوانين الحياة الواقعية.',
+                    'OOC : يمنع استخدام الكلام أو المعلومات خارج الرول بلاي داخل المحادثات الخاصة بالشخصية، إلا في الأماكن أو الأوامر المخصصة لذلك',
+                    'Trolling : يمنع استفزاز اللاعبين أو إزعاجهم أو القيام بتصرفات هدفها التخريب أو السخرية أو إفساد متعة اللعب.',
+                    'Metagaming : يمنع استخدام أي معلومات حصلت عليها خارج اللعبة أو من الديسكورد أو البث أو الشات الخارجي داخل أحداث الرول بلاي.',
+                    'Powergaming : يمنع إجبار أي لاعب على القيام بأفعال دون منحه فرصة للرد، أو تنفيذ تصرفات غير واقعية يستحيل حدوثها.',
+                    'Deathmatch : يمنع قتل أو الاعتداء على أي لاعب دون وجود سبب منطقي أو سيناريو رول بلاي واضح.',
+                    'Revenge Kill : يمنع العودة للانتقام بعد موت الشخصية مباشرة، ويجب نسيان أحداث الوفاة إذا كانت قوانين السيرفر تنص على ذلك.',
+                    'Random Deathmatch : يمنع مهاجمة أو قتل اللاعبين بشكل عشوائي ودون أي مبرر داخل الرول بلاي.',
+                    'Vehicle Deathmatch : يمنع استخدام المركبات كوسيلة لدهس أو قتل اللاعبين بشكل متعمد إلا إذا كان ذلك جزءًا من سيناريو معتمد.',
+                    'Combat Logging : يمنع الخروج من اللعبة أثناء المطاردة أو القتال أو الاعتقال أو أي موقف رول بلاي بهدف الهروب من النتائج.',
+                    'Fear RP : يجب على اللاعب إظهار الخوف على حياته في المواقف الخطيرة، وعدم التصرف وكأن الشخصية لا تخاف أو لا تتأثر.',
+                    'Fail RP : يمنع القيام بأي تصرف غير منطقي أو غير واقعي يفسد مجريات الرول بلاي.',
+                    'Cop Bait : يمنع استفزاز الشرطة عمدًا أو محاولة جذبها دون وجود سبب أو سيناريو رول بلاي.',
+                    'Bunny Hop : يمنع القفز المتكرر للحصول على سرعة إضافية أو استغلاله أثناء المطاردات.',
+                    'Ninja Jacking : يمنع سرقة مركبة من لاعب آخر مباشرة دون تنفيذ سيناريو رول بلاي مناسب.',
+                    'Spam : يمنع تكرار الرسائل أو الأوامر بشكل مزعج داخل الدردشة أو الرسائل الخاصة.',
+                    'Exploiting Bugs : يمنع استغلال أي خطأ أو ثغرة في السيرفر للحصول على أموال أو مزايا أو للهروب من العقوبات.',
+                    'Unrealistic Drivin : يمنع القيادة بطريقة غير واقعية مثل السير بسرعات جنونية في الأماكن الضيقة أو القفز بالمركبات دون مبرر.',
+                    'Respect : يجب احترام جميع اللاعبين والإدارة، ويمنع السب أو الإهانة أو التمييز أو نشر الكراهية داخل السيرفر.',
+                    'Admin Decisions : يجب الالتزام بقرارات الإدارة، ويمكن تقديم شكوى أو استئناف بالطرق الرسمية دون إثارة المشاكل أو الجدال داخل اللعبة.',
+                ]
+            },
+            important: {
+                title: 'قواعد مهمة', icon: 'fa-exclamation-triangle',
+                items: [
+                    'New Life Rule : عند وفاة شخصيتك، يمنع العودة إلى مكان الوفاة أو تذكر تفاصيل الحادث أو الأشخاص المتورطين فيه حتى انتهاء مدة الـ NLR المحددة من إدارة السيرفر.',
+                    'Character Kill : يعتبر قتل الشخصية نهائيًا عند موافقة جميع الأطراف أو بقرار من الإدارة، وبعدها يمنع استخدام نفس الشخصية أو استرجاع قصتها السابقة.',
+                    'Player Kill : عند تعرض شخصيتك للقتل دون CK، يجب عليك نسيان تفاصيل الحدث الأخير وعدم استخدامها للانتقام أو تحقيق مكاسب داخل الرول بلاي.',
+                    'Value of Life : يجب أن تعتبر حياة شخصيتك ذات قيمة كبيرة، ويمنع التصرف وكأنها لا تخشى الموت أو الإصابة أو العواقب.',
+                    'No Fear RP : يمنع مقاومة الأشخاص المسلحين أو الدخول في مواقف انتحارية بدون سبب منطقي يتناسب مع مجريات الرول بلاي.',
+                    'Robbery Rules : يمنع تنفيذ أي عملية سرقة دون توفر الشروط التي تحددها الإدارة، ويجب إعطاء الضحية فرصة للتفاعل وعدم إنهاء السيناريو بسرعة.',
+                    'Hostage Rules : يجب معاملة الرهائن بشكل واقعي، ويمنع قتلهم أو إيذاؤهم دون سبب واضح أو دون تصعيد منطقي للأحداث.',
+                    'Corruption Abuse : يمنع استغلال صلاحيات الوظائف الحكومية أو القيادية لتحقيق مكاسب شخصية أو حماية الأصدقاء أو الإضرار بالآخرين.',
+                    'Safe Zone : يمنع القتال أو إطلاق النار أو الخطف أو السرقة داخل المناطق الآمنة المحددة من قبل إدارة السيرفر.',
+                    'Green Zone Abuse : يمنع استغلال المناطق الآمنة للهروب من المطاردات أو الاختباء بعد ارتكاب الجرائم.',
+                    'Revenge RP : يمنع بناء سيناريو كامل هدفه الوحيد الانتقام الشخصي دون وجود مبررات وأحداث جديدة داخل الرول بلاي.',
+                    'Scamming Rules : يمنع الاحتيال على اللاعبين في الصفقات المتعلقة بالممتلكات أو الأموال خارج الأنظمة المسموح بها في السيرفر.',
+                    'Multi Character Abuse : يمنع نقل الأموال أو المعلومات أو الممتلكات بين شخصياتك المختلفة أو استخدام شخصية لخدمة شخصية أخرى.',
+                    'Impersonation : يمنع انتحال شخصية لاعب آخر أو شخصية إدارية أو شخصية مشهورة بهدف الخداع أو التضليل.',
+                    'Toxic Behavior : يمنع نشر الفتنة أو التحريض أو الإساءة المستمرة للاعبين أو محاولة تخريب بيئة السيرفر.',
+                    'Stream Sniping : يمنع استغلال بثوث اللاعبين لمعرفة مواقعهم أو خططهم أو أي معلومات تمنحك أفضلية داخل الرول بلاي.',
+                    'Combat Storing : يمنع تخزين أو سحب الأسلحة أو الأدوات أثناء الاشتباكات بهدف استغلال النظام أو تجنب خسارتها.',
+                    'Faction Abuse : يمنع استغلال صلاحيات الفصائل الرسمية أو غير الرسمية لتحقيق مصالح شخصية أو مخالفة قوانين السيرفر.',
+                    'Illegal Cooperation : يمنع التعاون بين الجهات المتعادية بشكل غير منطقي أو مشاركة معلومات سرية دون وجود مبرر رول بلاي.',
+                    'Common Sense Rule : يجب على جميع اللاعبين استخدام المنطق والعقل في جميع المواقف، وأي تصرف يفتقد للواقعية أو يهدف لاستغلال الأنظمة يعتبر مخالفة حتى وإن لم يكن مذكورًا بشكل صريح في القوانين.',
+                ]
+            },
+            admin: {
+                title: 'قوانين الإدارة', icon: 'fa-user-shield',
+                items: [
+                    'يمنع على أي إداري استغلال صلاحياته للحصول على مكاسب شخصية أو لمساعدة نفسه أو أصدقائه بأي شكل من الأشكال.',
+                    'يجب على جميع الإداريين التعامل مع اللاعبين باحترام وحيادية كاملة، دون تمييز أو تحيز لأي طرف.',
+                    'يمنع تنفيذ أي عقوبة دون التأكد من وجود دليل واضح أو مخالفة صريحة تستوجب العقوبة.',
+                    'يجب على الإداري الاستماع إلى جميع أطراف المشكلة قبل إصدار أي حكم أو قرار نهائي.',
+                    'يمنع استخدام أوامر الإدارة أثناء اللعب بشخصية رول بلاي إلا في الحالات الضرورية أو عند أداء المهام الإدارية.',
+                    'يمنع على الإداري التدخل في سيناريوهات الرول بلاي الجارية إلا إذا تضمنت مخالفة واضحة لقوانين السيرفر.',
+                    'يجب الحفاظ على سرية أوامر الإدارة والأدوات الخاصة بها، ويمنع كشفها أو استعراضها أمام اللاعبين دون سبب إداري.',
+                    'يمنع إساءة استخدام أوامر مثل السحب، النقل، القتل، أو السجن الإداري دون مبرر قانوني.',
+                    'يجب تسجيل جميع العقوبات المهمة وفق نظام السيرفر، مع توضيح سبب العقوبة بشكل واضح.',
+                    'يمنع على الإداري حذف أو تعديل الأدلة أو السجلات المتعلقة بالشكاوى أو المخالفات.',
+                    'لا يحق للإداري استغلال معرفته بمعلومات اللاعبين السرية أو سجلاتهم لتحقيق أي منفعة داخل اللعبة.',
+                    'يجب على الإداري الرد على استفسارات اللاعبين والتعامل مع البلاغات بأسرع وقت ممكن وبأسلوب احترافي.',
+                    'يمنع التهديد باستخدام الصلاحيات الإدارية أو استغلال المنصب لإجبار اللاعبين على تنفيذ أوامر شخصية.',
+                    'يجب على الإداري الالتزام بجميع قوانين السيرفر، فهو قدوة لباقي اللاعبين قبل أن يكون مسؤولًا عن تطبيقها.',
+                    'يمنع تنفيذ أي أمر إداري بناءً على خلافات أو مشاكل شخصية بين الإداري وأحد اللاعبين.',
+                    'لا يجوز للإداري منح أموال أو ممتلكات أو امتيازات لأي لاعب إلا بإذن من الإدارة العليا أو وفق نظام السيرفر.',
+                    'يجب المحافظة على سرية الشكاوى والتحقيقات الداخلية، ويمنع نشر تفاصيلها خارج الطاقم الإداري.',
+                    'يمنع تعطيل أو إفساد فعاليات اللاعبين أو سيناريوهات الرول بلاي دون وجود سبب إداري واضح.',
+                    'في حال ارتكب الإداري مخالفة، فإنه يخضع للعقوبات الإدارية مثل أي عضو آخر، ولا تمنحه رتبته حصانة من المحاسبة.',
+                    'أي إساءة متكررة في استخدام الصلاحيات أو مخالفة قوانين الإدارة قد تؤدي إلى تخفيض الرتبة أو سحبها بشكل نهائي، حسب قرار الإدارة العليا.',
+                ]
+            },
+            police: {
+                title: 'قواعد الشرطة', icon: 'fa-shield-alt',
+                items: [
+                    ' يجب على جميع أفراد الشرطة احترام المواطنين والتعامل معهم بأسلوب مهني في جميع الأوقات',
+                    ' يمنع استخدام القوة أو السلاح إلا عند الضرورة وبعد استنفاد الوسائل السلمية',
+                    ' يمنع إطلاق النار على أي مشتبه به ما لم يشكل خطرًا مباشرًا على الأرواح',
+                    ' يجب على الشرطي التعريف بنفسه وإظهار هويته الرسمية قبل البدء بأي إجراء أمني متى كان ذلك ممكنًا',
+                    ' يمنع تنفيذ أي اعتقال دون وجود سبب قانوني أو أدلة كافية',
+                    ' يجب قراءة حقوق المشتبه به قبل استكمال إجراءات التحقيق أو الاحتجاز إذا كان نظام السيرفر يعتمد ذلك',
+                    ' يمنع إساءة استخدام الصلاحيات أو الرتبة لتحقيق مصالح شخصية',
+                    ' يمنع التعاون مع العصابات أو المنظمات الإجرامية تحت أي ظرف دون وجود سيناريو معتمد',
+                    ' يجب الالتزام بسلسلة الرتب وتنفيذ أوامر القادة ما لم تخالف قوانين السيرفر',
+                    ' يمنع ترك الدورية أو موقع العمل دون إذن من المسؤول المباشر',
+                    ' يجب توثيق جميع القضايا المهمة والاعتقالات وفق نظام الشرطة',
+                    ' يمنع مطاردة المشتبه بهم بطريقة تعرض حياة المدنيين للخطر دون مبرر',
+                    ' يمنع تفتيش أي شخص أو مركبة دون سبب منطقي داخل الرول بلاي',
+                    ' يجب استخدام أجهزة الشرطة ومركباتها في المهام الرسمية فقط',
+                    ' يمنع كشف المعلومات السرية الخاصة بالتحقيقات أو العمليات الأمنية',
+                    ' يجب طلب الدعم عند مواجهة حالات تتجاوز قدرة الشرطي على التعامل معها',
+                    ' يمنع استغلال معدات الشرطة أو توزيعها على غير أفراد الجهاز الأمني',
+                    ' يجب معاملة جميع المواطنين بالمساواة دون تمييز أو تحيز',
+                    ' يمنع استخدام الرتبة للتهديد أو تخويف اللاعبين خارج إطار القانون',
+                    ' أي مخالفة من أحد أفراد الشرطة تعرضه للتحقيق الداخلي والعقوبات التي تحددها قيادة الشرطة',
+                ]
+            },
+            ems: {
+                title: 'قواعد المسعف', icon: 'fa-heartbeat',
+                items: [
+                    ' يجب على جميع المسعفين الاستجابة لبلاغات الطوارئ بأسرع وقت ممكن',
+                    ' يمنع حمل السلاح أو المشاركة في الاشتباكات إلا إذا سمحت قوانين السيرفر بذلك',
+                    ' يجب تقديم العلاج لجميع المصابين دون تمييز بين مجرم أو مدني أو شرطي',
+                    ' يمنع مغادرة مكان الحادث قبل التأكد من انتهاء المهمة الطبية',
+                    ' يجب احترام خصوصية المرضى وعدم مشاركة معلوماتهم مع أي جهة دون سبب رسمي',
+                    ' يمنع استغلال سيارة الإسعاف في التنقلات الشخصية',
+                    ' يجب ارتداء الزي الرسمي أثناء تأدية العمل',
+                    ' يمنع رفض علاج أي مصاب دون سبب طبي أو إداري واضح',
+                    ' يجب التنسيق مع الشرطة في الحوادث أو المناطق الخطرة قبل الدخول إليها',
+                    ' يمنع استخدام صلاحيات المسعف لتحقيق مكاسب شخصية',
+                    ' يجب اتباع الإجراءات الطبية المعتمدة داخل السيرفر أثناء علاج المصابين',
+                    ' يمنع مغادرة المستشفى أثناء وقت الدوام دون إذن',
+                    ' يجب المحافظة على سيارات الإسعاف والمعدات الطبية',
+                    ' يمنع إعطاء الأدوية أو العلاج بشكل عشوائي أو دون مبرر داخل الرول بلاي',
+                    ' يجب معاملة جميع المرضى باحترام وأخلاق مهنية',
+                    ' يمنع إهمال البلاغات أو تجاهل طلبات الإسعاف دون سبب مقنع',
+                    ' يجب إبلاغ الإدارة الطبية بأي حادث أو مخالفة تقع أثناء العمل',
+                    ' يمنع استخدام المعلومات الطبية أو بيانات المرضى لأغراض شخصية',
+                    ' يجب التعاون مع جميع الجهات الحكومية بما يخدم سلامة المواطنين وسير الأحداث',
+                    ' أي إساءة لاستخدام صلاحيات المسعف أو مخالفة قوانين الطاقم الطبي تعرض صاحبها للمساءلة والعقوبات الإدارية',
+                ]
+            },
+            gang: {
+                title: 'قواعد العصابات', icon: 'fa-skull',
+                items: [
+                    ' يمنع إنشاء أو قيادة أي عصابة دون موافقة إدارة السيرفر',
+                    ' يجب على جميع أعضاء العصابة الالتزام بالتسلسل القيادي واحترام قرارات القائد',
+                    ' يمنع تجنيد أي لاعب بالقوة أو التهديد خارج إطار الرول بلاي',
+                    ' يمنع إعلان الحروب بين العصابات دون وجود سبب رول بلاي واضح',
+                    ' يمنع مهاجمة مقرات العصابات الأخرى دون سيناريو معتمد',
+                    ' يمنع استخدام مركبات أو معدات الفصائل الحكومية',
+                    ' يمنع قتل أعضاء العصابات المنافسة دون سبب أو تصعيد منطقي',
+                    ' يمنع التعاون مع الجهات الحكومية بشكل دائم دون مبرر رول بلاي',
+                    ' يجب الحفاظ على سرية معلومات العصابة وأماكنها',
+                    ' يمنع استغلال أخطاء السيرفر في العمليات الإجرامية',
+                    ' يمنع خطف اللاعبين بشكل متكرر أو عشوائي',
+                    ' يمنع سرقة اللاعبين داخل المناطق الآمنة',
+                    ' يمنع استخدام الأسلحة الثقيلة إلا في الحالات المسموح بها',
+                    ' يجب احترام قوانين الرهائن أثناء عمليات الخطف',
+                    ' يمنع إهانة أو التقليل من أعضاء العصابات الأخرى خارج الرول بلاي',
+                    ' يمنع استخدام شخصية جديدة للانتقام من أحداث تخص شخصية أخرى',
+                    ' يجب تنفيذ جميع الأنشطة الإجرامية بطريقة واقعية',
+                    ' يمنع استخدام المركبات الحكومية أو الطبية أثناء تنفيذ الجرائم',
+                    ' يمنع استغلال الرتب داخل العصابة لتحقيق مصالح شخصية',
+                    ' أي مخالفة لقوانين العصابات تعرض العضو أو العصابة للعقوبات الإدارية',
+                ]
+            },
+            criminal: {
+                title: 'القواعد غير القانونية', icon: 'fa-user-secret',
+                items: [
+                    ' جميع الأنشطة غير القانونية يجب أن تتم داخل إطار رول بلاي واقعي',
+                    ' يمنع تنفيذ الجرائم داخل المناطق الآمنة',
+                    ' يمنع تنفيذ أكثر من عملية كبيرة في وقت قصير إذا كانت قوانين السيرفر تمنع ذلك',
+                    ' يمنع استغلال الثغرات أو الأخطاء لتسهيل الجرائم',
+                    ' يمنع سرقة اللاعب أكثر من مرة خلال المدة المحددة من الإدارة',
+                    ' يجب إعطاء الضحية فرصة للتفاعل أثناء السرقة أو الخطف',
+                    ' يمنع قتل الضحية بعد انتهاء السرقة دون سبب',
+                    ' يمنع خطف اللاعبين الجدد',
+                    ' يمنع استخدام الأسلحة الثقيلة دون مبرر',
+                    ' يجب تنفيذ جميع العمليات الإجرامية بتخطيط مسبق',
+                    ' يمنع التعاون مع الشرطة بشكل دائم',
+                    ' يجب احترام قوانين الرهائن',
+                    ' يمنع سرقة المركبات الحكومية',
+                    ' يجب إخفاء هوية الشخصية أثناء العمليات الإجرامية',
+                    ' يمنع نشر تفاصيل العمليات الإجرامية خارج الرول بلاي',
+                    ' يجب تسجيل جميع العمليات الكبيرة',
+                    ' يمنع استخدام المتفجرات في الأماكن العامة',
+                    ' يجب الحفاظ على سرية العصابة',
+                    ' يمنع خيانة العصابة أو تسريب معلوماتها',
+                    ' أي مخالفة تعرض العصابة للعقوبات الإدارية',
+                ]
+            },
+            glossary: {
+                title: 'شروط اللعبة', icon: 'fa-book',
+                items: [
+                    'HRP : Hard Roleplay - الالتزام بالواقعية المطلقة في جميع التصرفات',
+                    'OOC : Out of Character - المعلومات خارج شخصية اللاعب',
+                    'IC : In Character - المعلومات داخل شخصية اللاعب',
+                    'Metagaming : استخدام معلومات OOC داخل IC',
+                    'Powergaming : فرض تصرفات غير واقعية على لاعبين آخرين',
+                    'RDM : Random Deathmatch - القتل العشوائي بدون سبب',
+                    'VDM : Vehicle Deathmatch - استخدام المركبة كسلاح',
+                    'NLR : New Life Rule - قاعدة الحياة الجديدة بعد الموت',
+                    'CK : Character Kill - قتل الشخصية نهائيًا',
+                    'PK : Player Kill - نسيان أحداث القتل',
+                    'Fear RP : إظهار الخوف على الحياة',
+                    'Fail RP : التصرف بشكل غير واقعي',
+                    'Cop Bait : استفزاز الشرطة بدون سبب',
+                    'Bunny Hop : القفز المتكرر للحصول على سرعة',
+                    'Combat Logging : الخروج أثناء القتال',
+                    'Stream Sniping : استغلال البثوث للحصول على معلومات',
+                    'Safe Zone : المنطقة الآمنة المحظور القتال فيها',
+                    'Green Zone : منطقة آمنة إضافية',
+                    'Revenge RP : بناء سيناريو للانتقام',
+                    'Scamming : الاحتيال على اللاعبين',
+                ]
+            }
+        };
+
+        // Commands Data
+        const commandsData = {
+            glossary: {
+                title: 'شروط اللعبة',
+                icon: 'fa-book',
+                items: [
+                    'HRP : يجب الالتزام بالرول بلاي الواقعي',
+                    'OOC : يمنع استخدام المعلومات خارج الرول بلاي',
+                    'IC : المعلومات داخل شخصية اللاعب',
+                    'Metagaming : يمنع استخدام معلومات خارج اللعبة',
+                    'Powergaming : يمنع فرض تصرفات غير واقعية',
+                    'RDM : يمنع القتل العشوائي',
+                    'VDM : يمنع استخدام المركبة كسلاح',
+                    'NLR : قاعدة الحياة الجديدة',
+                    'CK : قتل الشخصية نهائيًا',
+                    'PK : نسيان أحداث القتل',
+                    'Fear RP : إظهار الخوف على الحياة',
+                    'Fail RP : يمنع التصرف غير الواقعي',
+                    'Cop Bait : يمنع استفزاز الشرطة',
+                    'Bunny Hop : يمنع القفز المتكرر',
+                    'Combat Logging : يمنع الخروج أثناء القتال',
+                    'Stream Sniping : يمنع استغلال البثوث',
+                    'Safe Zone : المنطقة الآمنة',
+                    'Green Zone : المنطقة الآمنة الإضافية',
+                    'Revenge RP : يمنع الانتقام',
+                    'Scamming : يمنع الاحتيال',
+                ]
+            },
+            criminal: {
+                title: 'أوامر إجرامية',
+                icon: 'fa-user-secret',
+                items: [
+                    '/rob - لبدء عملية سرقة',
+                    '/kidnap - لخطف لاعب',
+                    '/tie - لتقييد لاعب',
+                    '/untie - لفك قيد لاعب',
+                    '/cuff - لتقييد لاعب بال handcuffs',
+                    '/uncuff - لفك قيود اللاعب',
+                    '/drag - لسحب لاعب',
+                    '/carry - لحمل لاعب',
+                    '/putinveh - لوضع لاعب في مركبة',
+                    '/takeoutveh - لإخراج لاعب من مركبة',
+                    '/lockpick - لفتح مركبة مقفلة',
+                    '/hotwire - لتشغيل مركبة بدون مفتاح',
+                    '/sell - لبيع أشياء للاعب',
+                    '/buy - لشراء أشياء من لاعب',
+                    '/trade - لتبادل الأشياء',
+                    '/accept - لقبول عرض',
+                    '/decline - لرفض عرض',
+                    '/cancel - لإلغاء عملية',
+                    '/heist - لبدء عملية سطو',
+                    '/g - للتواصل مع أعضاء العصابة',
+                ]
+            },
+            gang: {
+                title: 'أوامر العصابة',
+                icon: 'fa-skull',
+                items: [
+                    '/g - للتواصل الداخلي للعصابة',
+                    '/g [رسالة] - إرسال رسالة للعصابة',
+                    '/gang invite [لاعب] - لدعوة لاعب للعصابة',
+                    '/gang kick [لاعب] - لطرد لاعب من العصابة',
+                    '/gang promote [لاعب] - لترقية لاعب',
+                    '/gang demote [لاعب] - لخفض رتبة لاعب',
+                    '/gang leader [لاعب] - لتعيين قائد جديد',
+                    '/gang rank [لاعب] [رتبة] - لتغيير رتبة لاعب',
+                    '/gang members - لعرض أعضاء العصابة',
+                    '/gang leave - لمغادرة العصابة',
+                    '/gang disband - لحل العصابة',
+                    '/gang create [اسم] - لإنشاء عصابة جديدة',
+                    '/gang info - لعرض معلومات العصابة',
+                    '/gang stash - للوصول لمخزن العصابة',
+                    '/gang vehicle - لاستدعاء مركبة العصابة',
+                    '/gang hideout - للذهاب لمخبأ العصابة',
+                    '/gang war [عصابة] - لإعلان حرب',
+                    '/gang peace [عصابة] - لعقد سلام',
+                    '/gang ally [عصابة] - لتحالف مع عصابة',
+                    '/gang unally [عصابة] - لإنهاء تحالف',
+                ]
+            },
+            ems: {
+                title: 'أوامر EMS',
+                icon: 'fa-ambulance',
+                items: [
+                    '/ems - للتواصل الداخلي للطاقم الطبي',
+                    '/ems [رسالة] - إرسال رسالة للطاقم الطبي',
+                    '/heal [لاعب] - لعلاج لاعب',
+                    '/revive [لاعب] - لإحياء لاعب',
+                    '/check [لاعب] - لفحص حالة لاعب',
+                    '/treat [لاعب] - لعلاج إصابات لاعب',
+                    '/stabilize [لاعب] - لتثبيت حالة لاعب',
+                    '/ambulance - لاستدعاء سيارة إسعاف',
+                    '/hospital - للذهاب للمستشفى',
+                    '/medic - لطلب مسعف',
+                    '/prescription [لاعب] [دواء] - لوصف دواء',
+                    '/discharge [لاعب] - لخروج لاعب من المستشفى',
+                    '/admit [لاعب] - لدخول لاعب للمستشفى',
+                    '/transfer [لاعب] [مستشفى] - لنقل لاعب',
+                    '/report - لتقديم تقرير طبي',
+                    '/medical [لاعب] - لفحص طبي شامل',
+                    '/surgery [لاعب] - لإجراء عملية جراحية',
+                    '/blood [لاعب] [نوع] - ل transfuse دم',
+                    '/medkit - لأخذ حقيبة إسعافات',
+                    '/status - لعرض حالة الطاقم الطبي',
+                ]
+            },
+            police: {
+                title: 'أوامر الشرطة',
+                icon: 'fa-shield-alt',
+                items: [
+                    '/pd - للتواصل الداخلي للشرطة',
+                    '/pd [رسالة] - إرسال رسالة للشرطة',
+                    '/arrest [لاعب] [سبب] - لاعتقال لاعب',
+                    '/release [لاعب] - لإطلاق سراح لاعب',
+                    '/fine [لاعب] [مبلغ] [سبب] - لتغريم لاعب',
+                    '/ticket [لاعب] [مبلغ] [سبب] - لكتابة مخالفة',
+                    '/cuff [لاعب] - لتقييد لاعب',
+                    '/uncuff [لاعب] - لفك قيود لاعب',
+                    '/drag [لاعب] - لسحب لاعب',
+                    '/putincar [لاعب] - لوضع لاعب في سيارة شرطة',
+                    '/takeoutcar [لاعب] - لإخراج لاعب من سيارة',
+                    '/jail [لاعب] [مدة] [سبب] - لحبس لاعب',
+                    '/unjail [لاعب] - لإطلاق سراح لاعب من السجن',
+                    '/warrant [لاعب] [سبب] - لإصدار مذكرة',
+                    '/search [لاعب] - لتفتيش لاعب',
+                    '/searchcar [مركبة] - لتفتيش مركبة',
+                    '/impound [مركبة] [سبب] - لمصادرة مركبة',
+                    '/unimpound [مركبة] - لإعادة مركبة',
+                    '/radar [سرعة] - لتفعيل الرادار',
+                    '/backup - لطلب دعم',
+                ]
+            },
+            admin: {
+                title: 'أوامر الإدارة',
+                icon: 'fa-user-shield',
+                items: [
+                    '/a - للتواصل مع الإدارة',
+                    '/a [رسالة] - إرسال رسالة للإدارة',
+                    '/goto [لاعب] - للذهاب للاعب',
+                    '/bring [لاعب] - لجلب لاعب',
+                    '/teleport [لاعب1] [لاعب2] - لنقل لاعب لآخر',
+                    '/slap [لاعب] [قوة] - لصفع لاعب',
+                    '/kick [لاعب] [سبب] - لطرد لاعب',
+                    '/ban [لاعب] [مدة] [سبب] - لحظر لاعب',
+                    '/unban [لاعب] - لفك حظر لاعب',
+                    '/jail [لاعب] [مدة] - لحبس لاعب إداريًا',
+                    '/unjail [لاعب] - لإطلاق سراح لاعب',
+                    '/freeze [لاعب] - لتجميد لاعب',
+                    '/unfreeze [لاعب] - لإلغاء تجميد لاعب',
+                    '/mute [لاعب] [مدة] - لكتم صوت لاعب',
+                    '/unmute [لاعب] - لإلغاء كتم صوت لاعب',
+                    '/warn [لاعب] [سبب] - لتحذير لاعب',
+                    '/unwarn [لاعب] - لإزالة تحذير',
+                    '/spec [لاعب] - لدخول وضع المراقبة',
+                    '/specoff - للخروج من وضع المراقبة',
+                    '/logs [لاعب] - لعرض سجلات لاعب',
+                ]
+            },
+            general: {
+                title: 'الأوامر العامة',
+                icon: 'fa-terminal',
+                items: [
+                    '/me [فعل] - لتنفيذ فعل',
+                    '/do [وصف] - لوصف شيء',
+                    '/try [محاولة] - لمحاولة فعل',
+                    '/ame [إجراء] - لإجراء حولك',
+                    '/me [فعل] - لتنفيذ فعل',
+                    '/do [وصف] - لوصف شيء',
+                    '/try [محاولة] - لمحاولة فعل',
+                    '/ame [إجراء] - لإجراء حولك',
+                    '/shout [رسالة] - للصراخ',
+                    '/whisper [لاعب] [رسالة] - للهمس',
+                    '/pm [لاعب] [رسالة] - لرسالة خاصة',
+                    '/report [لاعب] [سبب] - للإبلاغ عن لاعب',
+                    '/helpop [سؤال] - لطلب مساعدة',
+                    '/ticket [موضوع] - لإنشاء تذكرة',
+                    '/call [رقم] - للاتصال برقم',
+                    '/sms [رقم] [رسالة] - لإرسال رسالة نصية',
+                    '/showid [لاعب] - لإظهار الهوية',
+                    '/license [نوع] - لعرض رخصة',
+                    '/passport - لعرض جواز السفر',
+                    '/time - لعرض الوقت',
+                ]
+            }
+        };
+
+        // Show Rule
+        function showRule(category, element) {
+            const ruleDisplay = document.getElementById('ruleDisplay');
+            const data = rulesData[category];
+            
+            // Update active tab
+            document.querySelectorAll('#rulesNavBar .rule-tab').forEach(tab => {
+                tab.classList.remove('active-tab');
+            });
+            element.classList.add('active-tab');
+            
+            // Update indicator
+            updateIndicator(element, 'navIndicator');
+            
+            // Render content
+            let html = `<h3><i class="fas ${data.icon}"></i> ${data.title}</h3><ul>`;
+            data.items.forEach(item => {
+                html += `<li><i class="fas fa-check-circle"></i> ${item}</li>`;
+            });
+            html += '</ul>';
+            ruleDisplay.innerHTML = html;
+            
+            // Add animation
+            ruleDisplay.style.animation = 'none';
+            ruleDisplay.offsetHeight; // Trigger reflow
+            ruleDisplay.style.animation = 'slideUp 0.6s cubic-bezier(0.4, 0, 0.2, 1)';
+        }
+
+        // Show Command
+        function showCommand(category, element) {
+            const commandDisplay = document.getElementById('commandDisplay');
+            const data = commandsData[category];
+            
+            // Update active tab
+            document.querySelectorAll('#commandsNavBar .rule-tab').forEach(tab => {
+                tab.classList.remove('active-tab');
+            });
+            element.classList.add('active-tab');
+            
+            // Update indicator
+            updateIndicator(element, 'commandsIndicator');
+            
+            // Render content
+            let html = `<h3><i class="fas ${data.icon}"></i> ${data.title}</h3><ul>`;
+            data.items.forEach(item => {
+                html += `<li><i class="fas fa-terminal"></i> ${item}</li>`;
+            });
+            html += '</ul>';
+            commandDisplay.innerHTML = html;
+            
+            // Add animation
+            commandDisplay.style.animation = 'none';
+            commandDisplay.offsetHeight; // Trigger reflow
+            commandDisplay.style.animation = 'slideUp 0.6s cubic-bezier(0.4, 0, 0.2, 1)';
+        }
+
+        // Update Indicator
+        function updateIndicator(element, indicatorId) {
+            const indicator = document.getElementById(indicatorId);
+            const rect = element.getBoundingClientRect();
+            const parentRect = element.parentElement.getBoundingClientRect();
+            indicator.style.width = rect.width + 'px';
+            indicator.style.right = (parentRect.right - rect.right) + 'px';
+        }
+
+        // Initialize
+        document.addEventListener('DOMContentLoaded', function() {
+            // Initialize authentication
+            initAuth();
+            
+            // Show initial rule
+            const firstTab = document.getElementById('tab-general');
+            if (firstTab) {
+                showRule('general', firstTab);
+            }
+            
+            // Update indicators on scroll
+            const navBars = document.querySelectorAll('.rules-nav-bar');
+            navBars.forEach(bar => {
+                bar.addEventListener('scroll', function() {
+                    const activeTab = this.querySelector('.active-tab');
+                    if (activeTab) {
+                        const indicatorId = this.id === 'rulesNavBar' ? 'navIndicator' : 'commandsIndicator';
+                        updateIndicator(activeTab, indicatorId);
+                    }
+                });
+            });
+        });
+
+        // Play Video
+        function playVideo() {
+            const videoContainer = document.getElementById('videoContainer');
+            const videoOverlay = document.getElementById('videoOverlay');
+            
+            videoOverlay.innerHTML = '<iframe class="video-iframe" src="https://www.youtube.com/embed/dQw4w9WgXcQ?autoplay=1" allow="autoplay; encrypted-media" allowfullscreen></iframe>';
+        }
+
+        // Smooth scroll for navigation
+        document.querySelectorAll('.sidebar-nav a').forEach(link => {
+            link.addEventListener('click', function(e) {
+                if (this.id === 'homeLink') {
+                    e.preventDefault();
+                    showHome();
+                }
+            });
+        });
+
+        // Add intersection observer for scroll animations
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: '0px 0px -50px 0px'
+        };
+
+        const observer = new IntersectionObserver(function(entries) {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('revealed');
+                    observer.unobserve(entry.target);
+                }
+            });
+        }, observerOptions);
+
+        // Observe all bento items
+        document.querySelectorAll('.bento-item, .bento-creators-title').forEach(item => {
+            observer.observe(item);
+        });
+    </script>
+</body>
+</html>
